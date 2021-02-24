@@ -4,7 +4,7 @@ body {
 }
 nav {
   width: 100%;
-  height: 73px;
+  height: 78px;
   background-color: rgb(80, 214, 123);
   align-items: center;
   justify-content: space-between;
@@ -15,10 +15,15 @@ nav {
   display: flex;
 }
 
+.menu ul li {
+  display: inline-block;
+  margin: 10px;
+}
+
 .logo img {
   height: 40px;
   width: 120px;
-  padding: 16px 24px 24px 16px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
+  padding: 19px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
 ul {
@@ -51,13 +56,25 @@ li a:hover {
 /*botão de login*/
 .bt_login {
   display: flex;
+  position: absolute;
+  right: 0;
   justify-content: center;
   align-items: center;
   background-color: rgb(66, 109, 255);
-  border-bottom-left-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-  border-top-left-radius: 9999px;
-  border-top-right-radius: 9999px;
+  margin-top: 15px;
+  margin-right: 15px;
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  display: inline-block;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 0.625rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .bt_login a {
