@@ -9,15 +9,17 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  display: flex;
 }
 
 .menu {
   display: flex;
 }
 
-.menu ul li {
+.menu li {
   display: inline-block;
   margin: 10px;
+  align-items: center;
 }
 
 .logo img {
@@ -27,22 +29,36 @@ nav {
 }
 
 ul {
-  align-items: float;
+  display: block;
+  align-items: center;
   color: rgb(240, 241, 232);
   list-style: none;
   display: block;
   justify-content: center;
+  tab-size: 4;
+  text-size-adjust: 100%;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 li a {
   text-decoration: none;
   color: rgb(240, 241, 232);
   font-size: 14px;
+  letter-spacing: 0.025em;
+  max-height: 38px;
+  display: inline-block;
+  letter-spacing: 0.35px;
+  line-height: 20px;
+  tab-size: 4;
 }
 
 li a:hover {
   text-decoration: none;
   color: rgb(204, 204, 204);
+  opacity: 0.75;
+  transition-property: opacity;
+  transition-duration: 150ms;
 }
 
 /*bloco para os botões de login*/
