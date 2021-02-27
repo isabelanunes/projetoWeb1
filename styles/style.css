@@ -1,19 +1,34 @@
+/*-------------------wrapper-------------------------------------*/
+
+.wrapper{
+  margin:0 auto;
+}
+
+/*-------------------Menu-------------------------------------*/
+
+@font-face {
+  font-family: 'TuskerGrotesk';
+  src: url('../fonts/TuskerGrotesk-5500Medium.woff2');
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f1e8;
 }
-nav {
+
+
+header {
+  display: inline;
   width: 100%;
   height: 78px;
   background-color: rgb(80, 214, 123);
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  display: flex;
-}
-
-.menu {
-  display: flex;
+  margin-top: 0;
+  top: 0;
+  z-index: 9999;
 }
 
 .menu li {
@@ -22,23 +37,33 @@ nav {
   align-items: center;
 }
 
+.logo{
+  width:180px;
+  float:left;
+}
+
 .logo img {
   height: 40px;
   width: 120px;
   padding: 19px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
-ul {
+.list{
+  float: left;
+}
+
+.menu ul {
   display: block;
   align-items: center;
   color: rgb(240, 241, 232);
   list-style: none;
-  display: block;
   justify-content: center;
   tab-size: 4;
   text-size-adjust: 100%;
   font-weight: 500;
   line-height: 20px;
+  float: left;
+  margin-top: 20px;
 }
 
 li a {
@@ -48,9 +73,10 @@ li a {
   letter-spacing: 0.025em;
   max-height: 38px;
   display: inline-block;
-  letter-spacing: 0.35px;
   line-height: 20px;
   tab-size: 4;
+  font-family: 'Montserrat', sans-serif;
+  margin-left : 15px;
 }
 
 li a:hover {
@@ -73,7 +99,7 @@ li a:hover {
 .bt_login {
   display: flex;
   position: absolute;
-  right: 0;
+  right: 10px;
   justify-content: center;
   align-items: center;
   background-color: rgb(66, 109, 255);
@@ -82,8 +108,7 @@ li a:hover {
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   display: inline-block;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   letter-spacing: 0.05em;
@@ -92,6 +117,7 @@ li a:hover {
   padding: 0.625rem 1.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: inherit;
 }
 
 .bt_login a {
@@ -105,4 +131,70 @@ li a:hover {
   background-color: rgba(54, 90, 214);
   text-decoration: none;
   transition: ease-in-out 0.5s;
+}
+
+
+/*-------------------Principal-------------------------------------*/
+
+.principal{
+  margin-top: 78px;
+  z-index: -2;
+}
+
+.texto h1{
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  color: #223322;
+  font-size: 3.75rem;
+  line-height: 1;
+  margin-top: 0px;
+  margin-left: 34px;
+  padding-top: 46px;
+  font-weight: inherit;
+  margin-bottom: 0;
+  display: block;
+}
+
+.image_iza{
+  margin-left: 420px;
+  position: absolute;
+  clear: both;
+  padding-top: 32px;
+}
+
+
+.texto h2{
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  color: #223322;
+  font-size: 3rem;
+  line-height: 1;
+  margin-top: 0;
+  margin-left: 34px;
+  padding-top: 0;
+  font-weight: inherit;
+  line-height: 100%;
+  margin-bottom: 0;
+}
+p{
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  color: #223322;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-left: 34px;
+  font-weight: inherit;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.image_cdi{
+  padding-top: 5px;
+  height: 75px;
+  width: 275px;
+  margin-left: 34px;
+  max-width:70px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+.info{
+  z-index: -1;
 }
