@@ -13,14 +13,15 @@
 
 body {
   margin: 0;
+  width: 400px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f0f1e8;
 }
 
 header {
   display: inline;
-  width: 100%;
-  height: 120px;
+  width: 400px;
+  height: 73px;
   background-color: rgb(80, 214, 123);
   align-items: center;
   justify-content: space-between;
@@ -36,10 +37,15 @@ header {
   align-items: center;
 }
 
+.logo{
+  height: 73px;
+  width: 150px;
+}
+
 .logo img {
-  height: 180px;
-  width: 250px;
-  padding: 0px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
+  height: 41px;
+  width: 100%;
+  padding: 16px 9px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
 .list {
@@ -91,14 +97,20 @@ li a:hover {
   position: absolute;
   font-size: 70px;
   font-weight: 400;
-  right: 10px;
-  margin-top: 15px;
-  margin-right: 15px;
+  right: 0px;
+  margin-top: 3px;
+  margin-right: 0;
+  height: 70px;
+  width: 70px;
 }
 
-.bt_elementos a {
+.bt_elementos i {
   color: rgb(240, 241, 232);
   text-decoration: inherit;
+  border: none; /* Remove borders */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin:0;
+
 }
 
 /*-------------------Principal-------------------------------------*/
@@ -111,50 +123,74 @@ li a:hover {
 .texto h1 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
-  font-size: 3.75rem;
-  line-height: 1;
-  margin-top: 0px;
-  margin-left: 60px;
-  padding-top: 46px;
+  margin:0;
   font-weight: inherit;
   margin-bottom: 0;
   display: block;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 27px;
+}
+.texto{
+  margin:0;
+  padding: 0;
 }
 
 .image_iza {
-  margin-left: 420px;
+  margin:0;
   position: absolute;
   clear: both;
-  padding-top: 32px;
+  padding-top: 88px;
+  z-index: -1;
+}
+
+.image_iza img{
+  height: auto;
+  width: 100%;
+}
+
+.texto2{
+  display: inline-block;
+  width: 360px;
+  height: auto;
+  margin-left: 34px;
 }
 
 .texto h2 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
-  font-size: 3rem;
-  line-height: 1;
-  margin-top: 0;
-  margin-left: 60px;
-  padding-top: 0;
-  font-weight: inherit;
-  line-height: 100%;
-  margin-bottom: 0;
+  margin: 0;
+  padding-left:4px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  width: auto;
+  float:left;
 }
+
+
 p {
-  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
-  color: #223322;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  margin-left: 60px;
-  font-weight: inherit;
-  margin-top: 24px;
-  margin-bottom: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-transform: uppercase;
+  padding-top:190px;
+  padding-left:0;
+  padding-bottom: 0;
+  margin:0;
 }
 
 .image_cdi {
-  padding-top: 5px;
+  padding-top:0;
+  padding-left: 3px;
   height: 75px;
   width: 275px;
+  margin-top: 0;
   margin-left: 60px;
   max-width: 70px;
   max-height: 250px;
@@ -167,21 +203,23 @@ p {
 .btn_saibamais {
   display: none;
 }
-footer a {
-  color: #fff;
-  text-decoration: inherit;
-  padding-bottom: 16px;
-  padding-left: 36px;
-  padding-right: 36px;
-  padding-top: 16px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  line-height: 36px;
-  height: auto;
-  width: auto;
+
+.btn_baixeeaproveite{
+  height: 46px;
+  width: 196px;
   position: absolute;
   justify-content: center;
   background-color: rgb(66, 109, 255);
+  border-radius: 9999px;
+  margin-top:12px;
+}
+
+.btn_baixeeaproveite a {
+  color: #fff;
+  text-decoration: inherit;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  line-height: 10px;
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   display: inline-block;
@@ -189,13 +227,14 @@ footer a {
     opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
-  letter-spacing: 1.5px;
-  border-radius: 9999px;
+  letter-spacing: 0.9px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 18px;
   line-height: 36px;
   font-weight: inherit;
   tab-size: 4;
+  padding-left: 24px ;
+  padding-top: 6px ;
 }
 
 footer {
@@ -207,16 +246,16 @@ footer {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  height: 100px;
+  height: 50px;
   justify-content: center;
   left: 0px;
   line-height: 24px;
-  padding-bottom: 12px;
-  padding-top: 12px;
+  padding: 0;
   position: fixed;
   right: 0px;
   tab-size: 4;
   text-size-adjust: 100%;
-  width: auto;
+  width: 400px;
   z-index: 20;
+  height: 70px;
 }
