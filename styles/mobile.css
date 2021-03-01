@@ -20,7 +20,7 @@ body {
 header {
   display: inline;
   width: 100%;
-  height: 78px;
+  height: 120px;
   background-color: rgb(80, 214, 123);
   align-items: center;
   justify-content: space-between;
@@ -31,20 +31,15 @@ header {
 }
 
 .menu li {
-  display: inline-block;
+  display: none;
   margin: 10px;
   align-items: center;
 }
 
-.logo {
-  width: 180px;
-  float: left;
-}
-
 .logo img {
-  height: 40px;
-  width: 120px;
-  padding: 19px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
+  height: 180px;
+  width: 250px;
+  padding: 0px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
 .list {
@@ -52,7 +47,7 @@ header {
 }
 
 .menu ul {
-  display: block;
+  display: none;
   align-items: center;
   color: rgb(240, 241, 232);
   list-style: none;
@@ -87,46 +82,23 @@ li a:hover {
 }
 
 .bt_baixeoapp {
-  display: flex;
-  position: absolute;
-  right: 10px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(66, 109, 255);
-  margin-top: 15px;
-  margin-right: 15px;
-  text-transform: uppercase;
-  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
-  display: inline-block;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  letter-spacing: 0.05em;
-  border-radius: 9999px;
-  cursor: pointer;
-  padding: 0.625rem 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: inherit;
-  font-size: 18px;
-}
-
-.bt_baixeoapp a,
-.btn_saibamais a {
-  color: #fff;
-  text-decoration: inherit;
-}
-
-.bt_baixeoapp:hover,
-.btn_saibamais:hover {
-  background-color: rgba(54, 90, 214);
-  text-decoration: none;
-  transition: ease-in-out 0.5s;
+  display: none;
 }
 
 .bt_elementos {
-  display: none;
+  /*BOTÃO DE MENU PARA A VERSÃO MOBILE*/
+  display: inline-block;
+  position: absolute;
+  font-size: 70px;
+  font-weight: 400;
+  right: 10px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.bt_elementos a {
+  color: rgb(240, 241, 232);
+  text-decoration: inherit;
 }
 
 /*-------------------Principal-------------------------------------*/
@@ -192,10 +164,12 @@ p {
 .info {
   z-index: -1;
 }
-
 .btn_saibamais {
-  bottom: 0;
-  margin-left: 60px;
+  display: none;
+}
+footer a {
+  color: #fff;
+  text-decoration: inherit;
   padding-bottom: 16px;
   padding-left: 36px;
   padding-right: 36px;
@@ -207,7 +181,6 @@ p {
   width: auto;
   position: absolute;
   justify-content: center;
-  align-items: flex-start;
   background-color: rgb(66, 109, 255);
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
@@ -226,5 +199,24 @@ p {
 }
 
 footer {
-  display: none;
+  background-color: rgb(80, 214, 123);
+  bottom: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  height: 100px;
+  justify-content: center;
+  left: 0px;
+  line-height: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  position: fixed;
+  right: 0px;
+  tab-size: 4;
+  text-size-adjust: 100%;
+  width: auto;
+  z-index: 20;
 }
