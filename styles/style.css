@@ -1,14 +1,14 @@
 /*-------------------wrapper-------------------------------------*/
 
-.wrapper{
-  margin:0 auto;
+.wrapper {
+  margin: 0 auto;
 }
 
 /*-------------------Menu-------------------------------------*/
 
 @font-face {
-  font-family: 'TuskerGrotesk';
-  src: url('../fonts/TuskerGrotesk-5500Medium.woff2');
+  font-family: "TuskerGrotesk";
+  src: url("../fonts/TuskerGrotesk-5500Medium.woff2");
 }
 
 body {
@@ -16,7 +16,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f0f1e8;
 }
-
 
 header {
   display: inline;
@@ -37,9 +36,9 @@ header {
   align-items: center;
 }
 
-.logo{
-  width:180px;
-  float:left;
+.logo {
+  width: 180px;
+  float: left;
 }
 
 .logo img {
@@ -48,7 +47,7 @@ header {
   padding: 19px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
-.list{
+.list {
   float: left;
 }
 
@@ -75,8 +74,8 @@ li a {
   display: inline-block;
   line-height: 20px;
   tab-size: 4;
-  font-family: 'Montserrat', sans-serif;
-  margin-left : 15px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 15px;
 }
 
 li a:hover {
@@ -87,16 +86,7 @@ li a:hover {
   transition-duration: 150ms;
 }
 
-/*bloco para os botões de login*/
-.Login {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 350px;
-}
-
-/*botão de login*/
-.bt_login {
+.bt_baixeoapp {
   display: flex;
   position: absolute;
   right: 10px;
@@ -108,7 +98,8 @@ li a:hover {
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   display: inline-block;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   letter-spacing: 0.05em;
@@ -118,83 +109,114 @@ li a:hover {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: inherit;
+  font-size: 18px;
 }
 
-.bt_login a {
+.bt_baixeoapp a,
+.btn_saibamais a {
   color: #fff;
   text-decoration: inherit;
-  font-size: 18px;
-  font-weight: bold;
 }
 
-.bt_login:hover {
+.bt_baixeoapp:hover,
+.btn_saibamais:hover {
   background-color: rgba(54, 90, 214);
   text-decoration: none;
   transition: ease-in-out 0.5s;
 }
 
-
 /*-------------------Principal-------------------------------------*/
 
-.principal{
+.principal {
   margin-top: 78px;
   z-index: -2;
 }
 
-.texto h1{
+.texto h1 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
   font-size: 3.75rem;
   line-height: 1;
   margin-top: 0px;
-  margin-left: 34px;
+  margin-left: 60px;
   padding-top: 46px;
   font-weight: inherit;
   margin-bottom: 0;
   display: block;
 }
 
-.image_iza{
+.image_iza {
   margin-left: 420px;
   position: absolute;
   clear: both;
   padding-top: 32px;
 }
 
-
-.texto h2{
+.texto h2 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
   font-size: 3rem;
   line-height: 1;
   margin-top: 0;
-  margin-left: 34px;
+  margin-left: 60px;
   padding-top: 0;
   font-weight: inherit;
   line-height: 100%;
   margin-bottom: 0;
 }
-p{
+p {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-left: 34px;
+  margin-left: 60px;
   font-weight: inherit;
   margin-top: 24px;
   margin-bottom: 0;
 }
 
-.image_cdi{
+.image_cdi {
   padding-top: 5px;
   height: 75px;
   width: 275px;
-  margin-left: 34px;
-  max-width:70px;
-  max-height:250px;
+  margin-left: 60px;
+  max-width: 70px;
+  max-height: 250px;
   width: auto;
   height: auto;
 }
-.info{
+.info {
   z-index: -1;
+}
+
+.btn_saibamais {
+  bottom: 0;
+  margin-left: 60px;
+  padding-bottom: 16px;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-top: 16px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 36px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(66, 109, 255);
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  display: inline-block;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  letter-spacing: 1.5px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: inherit;
+  tab-size: 4;
 }
