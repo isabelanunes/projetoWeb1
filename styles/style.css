@@ -142,8 +142,8 @@ li a:hover {
   font-size: 3.75rem;
   line-height: 1;
   margin-top: 0px;
-  margin-left: 60px;
-  padding-top: 46px;
+  margin-left: 34px;
+  padding-top: 48px;
   font-weight: inherit;
   margin-bottom: 0;
   display: block;
@@ -162,7 +162,7 @@ li a:hover {
   font-size: 3rem;
   line-height: 1;
   margin-top: 0;
-  margin-left: 60px;
+  margin-left: 34px;
   padding-top: 0;
   font-weight: inherit;
   line-height: 100%;
@@ -173,17 +173,18 @@ p {
   color: #223322;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-left: 60px;
+  margin-left: 34px;
   font-weight: inherit;
   margin-top: 24px;
   margin-bottom: 0;
 }
 
 .image_cdi {
-  padding-top: 5px;
+  padding-top: 4px;
   height: 75px;
   width: 275px;
-  margin-left: 60px;
+  margin-left: 34px;
+  padding-bottom: 0px;
   max-width: 70px;
   max-height: 250px;
   width: auto;
@@ -193,9 +194,18 @@ p {
   z-index: -1;
 }
 
+.posicaobotao{
+  margin:0;
+  margin-top: 124px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+}
+
 .btn_saibamais {
   bottom: 0;
-  margin-left: 60px;
+  margin-left: 34px;
   padding-bottom: 16px;
   padding-left: 36px;
   padding-right: 36px;
@@ -203,9 +213,8 @@ p {
   font-weight: 400;
   letter-spacing: 1.5px;
   line-height: 36px;
-  height: auto;
-  width: auto;
-  position: absolute;
+  height: 36px;
+  width: 155px;
   justify-content: center;
   align-items: flex-start;
   background-color: rgb(66, 109, 255);
@@ -223,6 +232,7 @@ p {
   line-height: 36px;
   font-weight: inherit;
   tab-size: 4;
+  float:left;
 }
 
 footer {
