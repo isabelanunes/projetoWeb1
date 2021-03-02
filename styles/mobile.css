@@ -37,7 +37,7 @@ header {
   align-items: center;
 }
 
-.logo{
+.logo {
   height: 73px;
   width: 150px;
 }
@@ -96,7 +96,7 @@ li a:hover {
   display: flex;
   position: absolute;
   right: 28px;
-  top:19px;
+  top: 19px;
 }
 
 .bt_elementos i {
@@ -104,8 +104,8 @@ li a:hover {
   text-decoration: inherit;
   border: none; /* Remove borders */
   cursor: pointer; /* Mouse pointer on hover */
-  margin:0;
-  font-size:30px;
+  margin: 0;
+  font-size: 30px;
 }
 
 /*-------------------Principal-------------------------------------*/
@@ -118,7 +118,7 @@ li a:hover {
 .texto h1 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
-  margin:0;
+  margin: 0;
   font-weight: inherit;
   margin-bottom: 0;
   display: block;
@@ -128,29 +128,29 @@ li a:hover {
   text-transform: uppercase;
   padding-top: 27px;
 }
-.texto{
-  margin:0;
+.texto {
+  margin: 0;
   padding: 0;
 }
 
 .image_iza {
-  margin:0;
+  margin: 0;
   position: absolute;
   clear: both;
   padding-top: 88px;
   z-index: -1;
 }
 
-.image_iza img{
+.image_iza img {
   height: auto;
   width: 100%;
 }
 
-.texto2{
+.texto2 {
   display: flex;
   width: 100%;
   height: auto;
-  margin:0;
+  margin: 0;
   align-items: center;
   justify-content: center;
 }
@@ -165,13 +165,13 @@ li a:hover {
   line-height: 2rem;
   text-align: center;
   width: auto;
-  float:left;
+  float: left;
   justify-content: center;
 }
 
-.espaço{
-  margin:0;
-  padding:0;
+.espaço {
+  margin: 0;
+  padding: 0;
   padding-left: 4px;
 }
 
@@ -180,18 +180,18 @@ p {
   line-height: 2rem;
   text-align: center;
   --tw-text-opacity: 1;
-  color: rgba(255,255,255,var(--tw-text-opacity));
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   text-transform: uppercase;
-  padding-top:200px;
-  padding-left:0;
+  padding-top: 200px;
+  padding-left: 0;
   padding-bottom: 0;
-  margin:0;
+  margin: 0;
 }
 
 .image_cdi {
-  padding:0;
-  padding-top:4px;
-  margin:auto;
+  padding: 0;
+  padding-top: 4px;
+  margin: auto;
   margin-top: 0;
   max-width: 70px;
   max-height: 250px;
@@ -210,14 +210,14 @@ p {
   display: none;
 }
 
-.btn_baixeeaproveite{
+.btn_baixeeaproveite {
   height: 46px;
   width: 196px;
   position: absolute;
   justify-content: center;
   background-color: rgb(66, 109, 255);
   border-radius: 9999px;
-  margin-top:12px;
+  margin-top: 12px;
 }
 
 .btn_baixeeaproveite a {
@@ -239,8 +239,8 @@ p {
   line-height: 36px;
   font-weight: inherit;
   tab-size: 4;
-  padding-left: 24px ;
-  padding-top: 6px ;
+  padding-left: 24px;
+  padding-top: 6px;
 }
 
 footer {
@@ -261,7 +261,7 @@ footer {
   right: 0px;
   tab-size: 4;
   text-size-adjust: 100%;
-  width: 100%
+  width: 100%;
   z-index: 20;
   height: 70px;
 }
