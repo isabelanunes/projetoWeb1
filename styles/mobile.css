@@ -22,7 +22,7 @@ header {
   display: inline;
   width: 100%;
   height: 73px;
-  background-color: rgb(80, 214, 123);
+  background-color: rgb(17, 199, 111);
   align-items: center;
   justify-content: space-between;
   position: fixed;
@@ -45,7 +45,7 @@ header {
 .logo img {
   height: 41px;
   width: 100%;
-  padding: 16px 9px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
+  /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
 }
 
 .list {
@@ -244,7 +244,7 @@ p {
 }
 
 footer {
-  background-color: rgb(80, 214, 123);
+  background-color: rgb(17, 199, 111);
   bottom: 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;

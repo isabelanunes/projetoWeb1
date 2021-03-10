@@ -12,57 +12,53 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f0f1e8;
 }
 
 header {
-  display: inline;
-  width: 100%;
-  height: 78px;
-  background-color: rgb(80, 214, 123);
-  align-items: center;
+  display: flex;
   justify-content: space-between;
   position: fixed;
-  margin-top: 0;
+  width: 100%;
+  height: 78px;
+  background-color: rgb(17, 199, 111);
   top: 0;
-  z-index: 9999;
+}
+
+.list {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-right: 20%;
+  width: 60%;
 }
 
 .menu li {
-  display: inline-block;
-  margin: 10px;
-  align-items: center;
+  list-style: none;
 }
 
 .logo {
-  width: 180px;
-  float: left;
+  display: flex;
+  margin-left: 3%;
+  margin-top: 18px;
 }
 
 .logo img {
   height: 40px;
   width: 120px;
-  padding: 19px 24px; /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
-}
-
-.list {
-  float: left;
 }
 
 .menu ul {
-  display: block;
-  align-items: center;
+  display: flex;
   color: rgb(240, 241, 232);
-  list-style: none;
-  justify-content: center;
   tab-size: 4;
   text-size-adjust: 100%;
   font-weight: 500;
-  line-height: 20px;
-  float: left;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding: 0;
+  justify-content: space-between;
 }
 
 li a {
@@ -71,11 +67,10 @@ li a {
   font-size: 14px;
   letter-spacing: 0.025em;
   max-height: 38px;
-  display: inline-block;
   line-height: 20px;
   tab-size: 4;
   font-family: "Montserrat", sans-serif;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 li a:hover {
@@ -90,14 +85,11 @@ li a:hover {
   display: flex;
   position: absolute;
   right: 10px;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(66, 109, 255);
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 1%;
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
-  display: inline-block;
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -134,6 +126,7 @@ li a:hover {
 .principal {
   margin-top: 78px;
   z-index: -2;
+  position: relative;
 }
 
 .texto h1 {
@@ -142,7 +135,7 @@ li a:hover {
   font-size: 3.75rem;
   line-height: 1;
   margin-top: 0px;
-  margin-left: 34px;
+  margin-left: 3%;
   padding-top: 48px;
   font-weight: inherit;
   margin-bottom: 0;
@@ -150,10 +143,11 @@ li a:hover {
 }
 
 .image_iza {
-  margin-left: 420px;
+  margin-left: 40%;
   position: absolute;
   clear: both;
-  padding-top: 32px;
+  padding-top: 20px;
+  z-index: -1;
 }
 
 .texto h2 {
@@ -162,7 +156,7 @@ li a:hover {
   font-size: 3rem;
   line-height: 1;
   margin-top: 0;
-  margin-left: 34px;
+  margin-left: 3%;
   padding-top: 0;
   font-weight: inherit;
   line-height: 100%;
@@ -173,7 +167,7 @@ p {
   color: #223322;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  margin-left: 34px;
+  margin-left: 3%;
   font-weight: inherit;
   margin-top: 24px;
   margin-bottom: 0;
@@ -183,13 +177,14 @@ p {
   padding-top: 4px;
   height: 75px;
   width: 275px;
-  margin-left: 34px;
+  margin-left: 3%;
   padding-bottom: 0px;
   max-width: 70px;
   max-height: 250px;
   width: auto;
   height: auto;
 }
+
 .info {
   z-index: -1;
 }
@@ -205,7 +200,7 @@ p {
 
 .btn_saibamais {
   bottom: 0;
-  margin-left: 34px;
+  margin-left: 3%;
   padding-bottom: 16px;
   padding-left: 36px;
   padding-right: 36px;
