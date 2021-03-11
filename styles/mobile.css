@@ -126,7 +126,7 @@ li a:hover {
   line-height: 2.5rem;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 27px;
+  padding-top: 5%;
 }
 .texto {
   margin: 0;
@@ -137,7 +137,7 @@ li a:hover {
   margin: 0;
   position: absolute;
   clear: both;
-  padding-top: 88px;
+  padding-top: 37%;
   z-index: -1;
 }
 
