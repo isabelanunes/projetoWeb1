@@ -19,16 +19,18 @@ body {
 }
 
 header {
-  display: inline;
+  display: inline-block;
   width: 100%;
   height: 73px;
   background-color: rgb(17, 199, 111);
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   margin-top: 0;
   top: 0;
   z-index: 9999;
+}
+
+.list {
+  display: none;
 }
 
 .menu li {
@@ -38,8 +40,14 @@ header {
 }
 
 .logo {
-  height: 73px;
+  height: 50px;
   width: 150px;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  display: inline-block;
+  position: relative;
+  justify-content: start;
 }
 
 .logo img {
@@ -54,29 +62,10 @@ header {
 
 .menu ul {
   display: none;
-  align-items: center;
-  color: rgb(240, 241, 232);
-  list-style: none;
-  justify-content: center;
-  tab-size: 4;
-  text-size-adjust: 100%;
-  font-weight: 500;
-  line-height: 20px;
-  float: left;
-  margin-top: 20px;
 }
 
 li a {
   text-decoration: none;
-  color: rgb(240, 241, 232);
-  font-size: 14px;
-  letter-spacing: 0.025em;
-  max-height: 38px;
-  display: inline-block;
-  line-height: 20px;
-  tab-size: 4;
-  font-family: "Montserrat", sans-serif;
-  margin-left: 15px;
 }
 
 li a:hover {
@@ -109,36 +98,52 @@ li a:hover {
 }
 
 /*-------------------Principal-------------------------------------*/
+.wrapper {
+  max-width: 360px;
+  margin: 0;
+  display: flex;
+}
 
 .principal {
-  margin-top: 78px;
-  z-index: -2;
+  width: 100%;
+  height: auto;
 }
 
 .texto h1 {
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   color: #223322;
-  margin: 0;
   font-weight: inherit;
   margin-bottom: 0;
-  display: block;
+  display: flex;
   font-size: 2.25rem;
   line-height: 2.5rem;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 27px;
+  padding-top: 15%;
 }
+
 .texto {
   margin: 0;
   padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
+.info {
+  margin: 0;
+  padding: 0;
+}
 .image_iza {
   margin: 0;
   position: absolute;
-  clear: both;
-  padding-top: 88px;
-  z-index: -1;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  padding-top: 37%;
 }
 
 .image_iza img {
@@ -182,30 +187,24 @@ p {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   text-transform: uppercase;
-  padding-top: 200px;
-  padding-left: 0;
-  padding-bottom: 0;
-  margin: 0;
+  padding: 0;
+  padding-top: 60%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .image_cdi {
-  padding: 0;
-  padding-top: 4px;
-  margin: auto;
-  margin-top: 0;
-  max-width: 70px;
-  max-height: 250px;
-  width: auto;
-  height: auto;
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  padding: 0;
+  background-color: black;
+  width: fit-content;
+  height: auto;
 }
 
-.info {
-  z-index: -1;
-}
 .btn_saibamais {
   display: none;
 }
