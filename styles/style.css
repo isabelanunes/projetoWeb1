@@ -35,7 +35,7 @@ header {
   padding-top: 15px;
 }
 
-.menu li {
+li {
   list-style: none;
 }
 
@@ -92,7 +92,6 @@ li a:hover {
 }
 .bt_baixeoapp {
   background-color: rgb(66, 109, 255);
-
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   transition-property: background-color, border-color, color, fill, stroke,
@@ -240,4 +239,156 @@ p {
 
 footer {
   display: none;
+}
+
+/*-------------------Busca-------------------------------------*/
+.busca {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 100px;
+  flex-direction: column;
+}
+
+.search {
+  font-family: "SF Pro Text Regular", sans-serif;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  visibility: visible;
+  width: 400px;
+  height: 30px;
+  padding-left: 30px;
+}
+
+.search:focus {
+  outline: 0;
+}
+
+::placeholder {
+  color: #c7c6c6;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: left;
+}
+
+.button_api {
+  margin-top: 10px;
+  background-color: rgb(151, 155, 165);
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: inherit;
+  font-size: 15px;
+  border: none;
+}
+
+.button_api:hover {
+  background-color: rgb(180, 180, 180);
+  text-decoration: none;
+  transition: ease-in-out 0.5s;
+}
+
+.busca a {
+  font-size: 18px;
+  color: black;
+}
+
+/*-------------------Login-------------------------------------*/
+
+.login,
+.cadastro {
+  display: block;
+  width: 100%;
+  padding-top: 100px;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sessao {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  width: 700px;
+  margin: 0 auto;
+  padding-left: 15%;
+}
+
+.input_form,
+.field {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(109, 109, 109);
+  line-height: 1.2;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 62px;
+  padding: 0 80px 0 20px;
+  border-radius: 12px;
+}
+
+.input_form:focus,
+.field:focus {
+  outline: 0;
+}
+
+.logar,
+.cadastrar {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  padding-left: 40%;
+}
+
+.logar input,
+.cadastrar input {
+  background-color: rgb(66, 109, 255);
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 0.625rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: inherit;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: inherit;
+  border: none;
+  width: 200px;
+}
+
+.logar a {
+  color: black;
+  margin-top: 20px;
+  padding-right: 60%;
+}
+
+.btn_login:hover,
+.btn_cadastro:hover {
+  background-color: rgba(54, 90, 214);
+  text-decoration: none;
+  transition: ease-in-out 0.5s;
 }

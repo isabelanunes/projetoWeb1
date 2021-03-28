@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="styles\style.css" />
   <link rel="stylesheet" type="text/css" media="screen and (max-width: 700px)" href="styles\mobile.css">
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="js/script.js"></script>
+
 </head>
 
 <body>
@@ -33,7 +35,7 @@
       </div>
       <div class="botao_header">
         <div class="bt_baixeoapp">
-          <a href="busca.html">Pesquisa</a>
+          <a href="">PESQUISA</a>
         </div>
       </div>
 
@@ -44,43 +46,20 @@
     </div>
 
   </header>
-  <div class="wrapper">
-    <div class="principal">
-      <div class="info">
-        <div class="image_iza">
-          <img src="images/iza_personalizado.webp" alt="img1" width="650px">
+    <div class="wrapper">
+        <div class = "busca">
+            <ul class = "pesquisa">
+                <li></li><input id="search" class="search" type="text" name="search" placeholder="Digite a data no formato YYYY-MM-DD ">  </li>
+                <li> <button class="button_api" id="button_api">Pesquisar</button></li>
+            </ul>
+            
+            <a>Resultados da Busca:</a> 
+            <ul id ="result"></ul>
         </div>
-        <div class="texto">
-          <h1>PIX NO PICPAY</h1>
-          <div class='texto2'>
-            <h2>É DINHEIRO NA HORA</h2>
-            <div class=espaço></div>
-            <h2>E SEM TAXAS.</h2>
-          </div>
-          <p>E AQUI SEU $$$ RENDE +</p>
-        </div>
-        <div class="image_cdi">
-          <img src="images/download.png" alt="cdi" height="80px" width="275px">
-        </div>
-        <div class="posicaobotao">
-          <div class="btn_saibamais">
-            <a href="">SAIBA MAIS</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-  </div>
 
-  <!--- rodape para mobile -->
-
-  <footer>
-    <div class="btn_baixeeaproveite">
-      <a href="">BAIXE E APROVEITE</a>
-    </div>
-  </footer>
-
-</body>
-
+    <script>
+        busca_api();
+    </script>
+</body> 
 </html>
