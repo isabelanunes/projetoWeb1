@@ -6,19 +6,17 @@ function busca_api() {
   var search = document.getElementById("search");
 
   if (login == null) {
-    var li = document.createElement("li");
-    li.innerHTML =
+    msg.innerHTML =
       "Necessário estar logado para acessar pesquisa. Faça agora o " +
       "<a href=" +
       "login.html" +
       ">Login</a>";
-    msg.appendChild(li);
   } else {
     button.addEventListener("click", function () {
       axios
         .get(
           "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-            search.value.substring(0, 4)
+          search.value.substring(0, 4)
         )
         .then(function (res) {
           console.log(res.data.response.holidays);
@@ -27,8 +25,7 @@ function busca_api() {
           var control = 0;
           for (i; i < docs.length; i++) {
             if (docs[i].date.iso == search.value) {
-              var li = document.createElement("li");
-              li.innerHTML =
+              msg.innerHTML =
                 "Date: " +
                 docs[i].date.iso +
                 "<br>" +
@@ -41,8 +38,6 @@ function busca_api() {
                 "Country: " +
                 docs[i].country.name +
                 "<br>";
-
-              msg.appendChild(li);
             } else {
               control++;
             }
@@ -50,11 +45,9 @@ function busca_api() {
 
           if (control == i) {
             var li = document.createElement("li");
-            li.innerHTML =
+            msg.innerHTML =
               "Não foram encontrados feriados correspondentes a data " +
               search.value;
-
-            msg.appendChild(li);
           }
         });
     });
@@ -90,6 +83,10 @@ function cadastrar() {
   var email = document.getElementById("email");
   var senha = document.getElementById("senha");
   var confsenha = document.getElementById("confsenha");
+  var dialog = document.querySelector(".dialog");
+  var mensagem = document.getElementById("mensagem");
+  var btn_OK = document.getElementById("btn_OK");
+  var resposta = 400;
 
   var val_email = document.getElementById("email-verify");
   var val_senha = document.getElementById("senha-verify");
@@ -146,26 +143,45 @@ function cadastrar() {
           password: senha.value,
         })
         .then(function (response) {
-          console.log(response);
           if (response.status == 200) {
-            alert("Cadastro realizado com sucesso");
-            open("login.html");
+            /*alert("Cadastro realizado com sucesso");*/
+            mensagem.innerHTML = "Cadastro realizado com sucesso!";
+            dialog.className = 'dialog show';
+            resposta = response.status;
+
           }
         })
         .catch(function (error) {
-          console.log(error);
+          mensagem.innerHTML = "Erro ao cadastrar! Tente novamente!";
+          dialog.className = 'dialog show';
+          resposta = 400;
         });
     }
   });
+
+  btn_OK.addEventListener("click", function () {
+    dialog.className = 'dialog';
+
+    if (resposta == 200) {
+      open("login.html");
+    }
+
+  });
+
 }
 
+
+
 function login() {
-  alert("login");
   var form = document.getElementById("button_login");
   var username = document.getElementById("username");
   var passwd = document.getElementById("passwd");
   var verify_user = document.getElementById("verify_username");
   var verify_passwd = document.getElementById("verify_passwd");
+  var resposta = 400;
+  var btn_OK = document.getElementById("btn_OK");
+  var dialog = document.querySelector(".dialog");
+  var mensagem = document.getElementById("mensagem");
 
   username.addEventListener("keyup", function () {
     if (verificaEmail(username)) {
@@ -191,13 +207,27 @@ function login() {
       })
       .then(function (r) {
         if (r.status == 200) {
-          alert("Login efetuado com sucesso");
+          /*alert("Login efetuado com sucesso");*/
           localStorage.setItem("login", username.value);
           localStorage.setItem(username.value, r.data.token);
-          open("index.html");
-        } else {
+          mensagem.innerHTML = "Login realizado com sucesso!";
+          dialog.className = 'dialog show';
+          resposta = r.status;
         }
       })
-      .catch(function (error) {});
+      .catch(function (error) {
+        mensagem.innerHTML = "Usuário e/ou senha incorretos!";
+        dialog.className = 'dialog show';
+        resposta = 400;
+      });
+  });
+
+  btn_OK.addEventListener("click", function () {
+    dialog.className = 'dialog';
+
+    if (resposta == 200) {
+      open("index.html");
+    }
+
   });
 }

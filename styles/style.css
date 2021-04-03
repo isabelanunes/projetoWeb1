@@ -392,3 +392,46 @@ footer {
   text-decoration: none;
   transition: ease-in-out 0.5s;
 }
+
+
+.dialog{
+  width: 50%;
+  height: auto;
+  display: none;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dialog.show{
+  margin:0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity:1;
+  transform: scale(1) translateY(0px);
+}
+
+.btn_OK{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  left:40%;
+  margin:0px;
+  margin-bottom: 10px;
+}
+
+.mensagem{
+  margin:0;
+  margin-top: 10px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
