@@ -1,5 +1,4 @@
 function busca_api() {
-  console.log("entrou");
   var login = localStorage.getItem("login");
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
@@ -10,13 +9,14 @@ function busca_api() {
       "Necessário estar logado para acessar pesquisa. Faça agora o " +
       "<a href=" +
       "login.html" +
-      ">Login</a>";
+      ">Login</a>" +
+      "!";
   } else {
     button.addEventListener("click", function () {
       axios
         .get(
           "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-          search.value.substring(0, 4)
+            search.value.substring(0, 4)
         )
         .then(function (res) {
           console.log(res.data.response.holidays);
@@ -101,6 +101,7 @@ function cadastrar() {
       aux_email = true;
       val_email.innerHTML = "";
     } else {
+      email.classList.toggle("toggleFocusRed");
       val_email.innerHTML = "Email inválido";
     }
   });
@@ -126,6 +127,7 @@ function cadastrar() {
       val_senha.innerHTML = "";
       val_confsenha.innerHTML = "";
     } else if (senha.value != confsenha.value) {
+      confsenha.classList.toggle("toggleFocusRed");
       val_senha.innerHTML = "";
       val_confsenha.innerHTML = "Senhas não conferem";
     } else {
@@ -146,31 +148,26 @@ function cadastrar() {
           if (response.status == 200) {
             /*alert("Cadastro realizado com sucesso");*/
             mensagem.innerHTML = "Cadastro realizado com sucesso!";
-            dialog.className = 'dialog show';
+            dialog.className = "dialog show";
             resposta = response.status;
-
           }
         })
         .catch(function (error) {
           mensagem.innerHTML = "Erro ao cadastrar! Tente novamente!";
-          dialog.className = 'dialog show';
+          dialog.className = "dialog show";
           resposta = 400;
         });
     }
   });
 
   btn_OK.addEventListener("click", function () {
-    dialog.className = 'dialog';
+    dialog.className = "dialog";
 
     if (resposta == 200) {
       open("login.html");
     }
-
   });
-
 }
-
-
 
 function login() {
   var form = document.getElementById("button_login");
@@ -187,6 +184,7 @@ function login() {
     if (verificaEmail(username)) {
       verify_user.innerHTML = "";
     } else {
+      username.classList.toggle("toggleFocusRed");
       verify_user.innerHTML = "Não é um e-mail válido";
     }
   });
@@ -211,23 +209,22 @@ function login() {
           localStorage.setItem("login", username.value);
           localStorage.setItem(username.value, r.data.token);
           mensagem.innerHTML = "Login realizado com sucesso!";
-          dialog.className = 'dialog show';
+          dialog.className = "dialog show";
           resposta = r.status;
         }
       })
       .catch(function (error) {
         mensagem.innerHTML = "Usuário e/ou senha incorretos!";
-        dialog.className = 'dialog show';
+        dialog.className = "dialog show";
         resposta = 400;
       });
   });
 
   btn_OK.addEventListener("click", function () {
-    dialog.className = 'dialog';
+    dialog.className = "dialog";
 
     if (resposta == 200) {
       open("index.html");
     }
-
   });
 }
