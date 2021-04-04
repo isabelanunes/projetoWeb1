@@ -15,6 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
   <script type="text/javascript" src="js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -54,14 +57,18 @@
       </div> ㅤㅤㅤ
       <div class="form">
         <form id="form_login">
-          <input id="email" type="text" class="field" placeholder="E-mail"> <br />
-          <p id="email-verify"></p>
-
-          <input id="senha" type="password" class="field" placeholder="Senha"> <br />
-          <p id="senha-verify"></p>
-
-          <input id="confsenha" type="password" class="field" placeholder="Confirme sua Senha"> <br />
-          <p id="confsenha-verify"></p>
+          <div class="inputs">
+            <input id="email" type="text" class="field" placeholder="E-mail">
+            <p id="email-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="senha" type="password" class="field" placeholder="Senha">
+            <p id="senha-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="confsenha" type="password" class="field" placeholder="Confirme sua Senha">
+            <p id="confsenha-verify" class="verificacao"></p>
+          </div>
         </form>
       </div>
       <div class="cadastrar">

@@ -55,16 +55,20 @@
       </div> ㅤㅤㅤ
       <div class="form">
         <form id="form_login">
-          <input id="username" class="input_form" type="text" name="username"
-            placeholder="Informe o seu nome de usuário">
-          <p id="verify_username"></p>
-          <input id="passwd" class="input_form" type="password" name="pass" placeholder="Informe a sua senha">
-          <p id="verify_passwd"></p>
+          <div class="inputs">
+            <input id="username" class="field" type="text" name="username" placeholder="Informe o seu nome de usuário">
+            <p id="verify_username" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="passwd" class="field" type="password" name="pass" placeholder="Informe a sua senha">
+            <p id="verify_passwd" class="verificacao"></p>
+          </div>
+
         </form>
       </div>
       <div class="logar">
         <input id="button_login" type="submit" class="btn_login" value="Continuar">
-        <a class="icon" href="cadastro.html">Não faz parte do PicPay? Cadastre-se agora.</a>
+        <a class="link_cadastro" href="cadastro.html">Não faz parte do PicPay? Cadastre-se agora.</a>
       </div>
       <div class="dialog">
         <p id="mensagem" class="mensagem">mensagem qualquer</p>

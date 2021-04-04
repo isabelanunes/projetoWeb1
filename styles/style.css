@@ -319,8 +319,10 @@ footer {
 
 .sessao {
   display: flex;
-  width: 400px;
+  width: fit-content;
   margin: 0 auto;
+  align-items: center;
+  text-align: center;
 }
 
 .form {
@@ -330,17 +332,18 @@ footer {
   padding-left: 15%;
 }
 
-.input_form,
 .field {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(109, 109, 109);
   line-height: 1.2;
   font-size: 18px;
   display: block;
-  width: 100%;
+  width: 500px;
   background: transparent;
   height: 62px;
-  padding: 0 80px 0 20px;
+  padding:0px;
+  padding-left: 20px;
+  margin: 0;
   border-radius: 12px;
 }
 
@@ -349,12 +352,26 @@ footer {
   outline: 0;
 }
 
-.logar,
+.link_cadastro{
+  padding: 0;
+  margin:0;
+}
+
+.logar{
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  padding:0;
+  text-align: center;
+  align-items: center;
+}
 .cadastrar {
   display: flex;
-  width: 500px;
+  width: auto;
   flex-direction: column;
-  padding-left: 40%;
+  padding:0;
+  text-align: center;
+  align-items: center;
 }
 
 .logar input,
@@ -382,8 +399,7 @@ footer {
 
 .logar a {
   color: black;
-  margin-top: 20px;
-  padding-right: 60%;
+  padding-top: 10px;
 }
 
 .btn_login:hover,
@@ -402,6 +418,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 12px;
 }
 
 .dialog.show{
@@ -426,6 +443,25 @@ footer {
   left:40%;
   margin:0px;
   margin-bottom: 10px;
+  height: auto;
+
+  background-color: rgb(66, 109, 255);
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 24px;
+  font-weight: inherit;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: inherit;
+  border: none;
 }
 
 .mensagem{
@@ -434,4 +470,40 @@ footer {
   padding: 0;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.verificacao{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #223322;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.form_login{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.form{
+  padding: 0;
+  margin:0;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs{
+  margin:0;
+  padding: 0;
 }
