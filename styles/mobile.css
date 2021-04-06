@@ -2,6 +2,9 @@
 
 .wrapper {
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 540px;
 }
 
 /*-------------------Menu-------------------------------------*/
@@ -98,12 +101,6 @@ li a:hover {
 }
 
 /*-------------------Principal-------------------------------------*/
-.wrapper {
-  max-width: 360px;
-  margin: 0;
-  display: flex;
-}
-
 .principal {
   width: 100%;
   height: auto;
@@ -305,8 +302,14 @@ footer {
 }
 
 .button_api {
-  margin-top: 10px;
-  background-color: rgb(151, 155, 165);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 0px;
+  height: auto;
+  margin-top:  10px;
+  background-color: rgb(66, 109, 255);
   text-transform: uppercase;
   font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
   transition-property: background-color, border-color, color, fill, stroke,
@@ -316,15 +319,17 @@ footer {
   letter-spacing: 0.05em;
   border-radius: 9999px;
   cursor: pointer;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  padding: 5px;
+  line-height: 24px;
   font-weight: inherit;
-  font-size: 15px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: inherit;
   border: none;
 }
 
 .button_api:hover {
-  background-color: rgb(180, 180, 180);
+  background-color: rgba(54, 90, 214);
   text-decoration: none;
   transition: ease-in-out 0.5s;
 }
@@ -332,4 +337,8 @@ footer {
 .busca a {
   font-size: 18px;
   color: black;
+}
+
+.login{
+  width: 100%;
 }
