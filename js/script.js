@@ -1,3 +1,24 @@
+function iniciar() {
+  var btn_logar = document.getElementById("btn_inicio");
+  var wrapper_index = document.getElementById("wrapper_index");
+  var wrapper_login = document.getElementById("wrapper_login");
+  var wrapper_busca = document.getElementById("wrapper_busca");
+  var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+
+  wrapper_login.className = "desaparecer";
+  wrapper_busca.className = "desaparecer";
+  wrapper_cadastro.className = "desaparecer";
+
+  btn_logar.addEventListener("click", function () {
+    wrapper_index.className = "desaparecer";
+    wrapper_login.className = "wrapper";
+    wrapper_busca.className = "desaparecer";
+    wrapper_cadastro.className = "desaparecer";
+
+
+  });
+}
+
 function busca_api() {
   var login = localStorage.getItem("login");
   var msg = document.getElementById("result");
@@ -164,7 +185,7 @@ function cadastrar() {
     dialog.className = "dialog";
 
     if (resposta == 200) {
-      open("login.html");
+      iniciar();
     }
   });
 }
@@ -222,9 +243,39 @@ function login() {
 
   btn_OK.addEventListener("click", function () {
     dialog.className = "dialog";
+    var wrapper_busca = document.getElementById("wrapper_busca");
+    var wrapper_login = document.getElementById("wrapper_login");
+    var wrapper_index = document.getElementById("wrapper_index");
+    var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+
 
     if (resposta == 200) {
-      open("index.html");
+      //open("index.html");
+    
+      wrapper_busca.className = "wrapper";
+      wrapper_login.className = "desaparecer";
+      wrapper_index.className = "desaparecer";
+      wrapper_cadastro.className = "desaparecer";
+
+
     }
   });
+}
+
+function cadastro(){
+  var link_cadastrar = document.getElementById("link_cadastrar");
+
+  var wrapper_index = document.getElementById("wrapper_index");
+  var wrapper_login = document.getElementById("wrapper_login");
+  var wrapper_busca = document.getElementById("wrapper_busca");
+  var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+
+  link_cadastrar.addEventListener("click", function () {
+    wrapper_cadastro.className = "wrapper";
+    wrapper_login.className = "desaparecer";
+    wrapper_busca.className = "desaparecer";
+    wrapper_index.className = "desaparecer";
+
+  });
+
 }

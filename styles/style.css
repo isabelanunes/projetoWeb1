@@ -287,7 +287,7 @@ footer {
   text-align: center;
   width: 50%;
   margin: 0px;
-  margin-top:  10px;
+  margin-top: 10px;
   height: auto;
 
   background-color: rgb(66, 109, 255);
@@ -349,7 +349,7 @@ footer {
 
 .field {
   font-family: Arial, Helvetica, sans-serif;
-  color:  #223322;
+  color: #223322;
   border-color: #223322;
   line-height: 1.2;
   font-size: 18px;
@@ -362,6 +362,10 @@ footer {
   margin: 0;
   border-radius: 12px;
   text-align: left;
+}
+
+.desaparecer {
+  display: none !important;
 }
 
 .input_form:focus,
@@ -465,7 +469,6 @@ footer {
 .dialog.show {
   opacity: 1;
   transform: scale(1) translateY(0px);
-  
 }
 
 .btn_OK {
@@ -540,4 +543,3 @@ footer {
   margin: 0;
   padding: 0;
 }
-

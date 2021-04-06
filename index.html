@@ -14,6 +14,10 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -33,7 +37,7 @@
       </div>
       <div class="botao_header">
         <div class="bt_baixeoapp">
-          <a href="busca.html">Pesquisa</a>
+          <a id="btn_inicio">Login</a>
         </div>
       </div>
 
@@ -44,7 +48,9 @@
     </div>
 
   </header>
-  <div class="wrapper">
+
+  <!-- WRAPPER INDEX -->
+  <div class="wrapper" id="wrapper_index">
     <div class="principal">
       <div class="info">
         <div class="image_iza">
@@ -71,6 +77,84 @@
 
     </div>
   </div>
+
+  <!-- WRAPPER LOGIN -->
+  <div class="wrapper" id="wrapper_login">
+    <div class="login">
+      <div class="sessao">
+        <h1>Iniciar sessão</h1>
+      </div> ㅤㅤㅤ
+      <div class="form">
+        <form id="form_login">
+          <div class="inputs">
+            <input id="username" class="field" type="text" name="username" placeholder="Informe o seu nome de usuário">
+            <p id="verify_username" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="passwd" class="field" type="password" name="pass" placeholder="Informe a sua senha">
+            <p id="verify_passwd" class="verificacao"></p>
+          </div>
+
+        </form>
+      </div>
+      <div class="logar">
+        <input id="button_login" type="submit" class="btn_login" value="Continuar">
+        <a class="link_cadastro" id="link_cadastrar">Não faz parte do PicPay? Cadastre-se agora.</a>
+      </div>
+      <div class="dialog">
+        <p id="mensagem" class="mensagem">mensagem qualquer</p>
+        <input id="btn_OK" type="submit" class="btn_OK" value="OK">
+      </div>
+    </div>
+  </div>
+
+  <!-- WRAPPER BUSCA -->
+
+  <div class="wrapper" id="wrapper_busca">
+    <div class="busca">
+      <ul class="pesquisa">
+        <li></li><input id="search" class="search" type="text" name="search"
+          placeholder="Digite a data no formato YYYY-MM-DD "> </li>
+        <li> <button class="button_api" id="button_api">Pesquisar</button></li>
+      </ul>
+      <a>Resultados da Busca:</a>
+      <ul class="result_busca" id="result"></ul>
+    </div>
+  </div>
+
+  <!-- WRAPPER CADASTRO -->
+
+  <div class="wrapper" id="wrapper_cadastro">
+    <div class="cadastro">
+      <div class="sessao">
+        <h1>Faça parte do Picpay!</h1>
+      </div> ㅤㅤㅤ
+      <div class="form">
+        <form id="form_login">
+          <div class="inputs">
+            <input id="email" type="text" class="field" placeholder="E-mail">
+            <p id="email-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="senha" type="password" class="field" placeholder="Senha">
+            <p id="senha-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="confsenha" type="password" class="field" placeholder="Confirme sua Senha">
+            <p id="confsenha-verify" class="verificacao"></p>
+          </div>
+        </form>
+      </div>
+      <div class="cadastrar">
+        <input id="button" type="submit" class="btn_cadastro" value="Cadastrar">
+      </div>
+    </div>
+    <div class="dialog">
+      <p id="mensagem" class="mensagem">mensagem qualquer</p>
+      <input id="btn_OK" type="submit" class="btn_OK" value="OK">
+    </div>
+  </div>
+
   </div>
 
   <!--- rodape para mobile -->
@@ -80,7 +164,14 @@
       <a href="">BAIXE E APROVEITE</a>
     </div>
   </footer>
-
 </body>
+
+<script>
+  iniciar();
+  busca_api();
+  login();
+  cadastrar();
+  cadastro();
+</script>
 
 </html>
