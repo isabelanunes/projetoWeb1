@@ -1,6 +1,7 @@
 /*-------------------wrapper-------------------------------------*/
 
 .wrapper {
+  position: relative;
   display: flex;
   margin: 0 auto;
   max-width: 1500px;
@@ -199,9 +200,10 @@ p {
 }
 
 .posicaobotao {
+  position: absolute;
   margin-top: 124px;
   padding-bottom: 20px;
-  padding-left: 12.8%;
+  padding-left: 40px;
   width: auto;
   height: 150px;
   margin-right: auto;

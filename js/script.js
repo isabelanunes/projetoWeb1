@@ -9,7 +9,6 @@ function iniciar() {
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
-
   btn_logar.addEventListener("click", function () {
     wrapper_index.className = "desaparecer";
     wrapper_login.className = "wrapper";
@@ -29,7 +28,12 @@ function iniciar() {
   });
 }
 
+ function teste(){
+   console.log("entrou");
+ }
+
 function pesquisar() {
+
   var wrapper_index = document.getElementById("wrapper_index");
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
@@ -41,7 +45,8 @@ function pesquisar() {
   var btn_pesquisar = document.getElementById("btn_pesquisar");
 
   btn_pesquisar.addEventListener("click", function () {
-    if (token == null) {
+    console.log("clicou");
+    if (token == undefined) {
       mensagem.innerHTML = "Necessário estar logado para acessar pesquisa. Faça agora o login!";
       dialog.className = "dialog show";
     } else {
@@ -62,20 +67,11 @@ function pesquisar() {
 }
 
 function busca_api() {
-  var token = localStorage.getItem("token");
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
   var search = document.getElementById("search");
 
-  if (token == null) {
-    msg.innerHTML =
-      "Necessário estar logado para acessar pesquisa. Faça agora o " +
-      "<a href=" +
-      "login.html" +
-      ">Login</a>" +
-      "!";
-  } else {
-    button.addEventListener("click", function () {
+  button.addEventListener("click", function () {
       axios
         .get(
           "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
@@ -107,14 +103,12 @@ function busca_api() {
           }
 
           if (control == i) {
-            var li = document.createElement("li");
             msg.innerHTML =
               "Não foram encontrados feriados correspondentes a data " +
               search.value;
           }
         });
     });
-  }
 
 }
 
