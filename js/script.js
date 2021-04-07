@@ -1,3 +1,15 @@
+function logo(){
+  var wrapper_index = document.getElementById("wrapper_index");
+  var wrapper_login = document.getElementById("wrapper_login");
+  var wrapper_busca = document.getElementById("wrapper_busca");
+  var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+
+  wrapper_login.className = "desaparecer";
+  wrapper_busca.className = "desaparecer";
+  wrapper_cadastro.className = "desaparecer";
+  wrapper_index.className = "wrapper";
+}
+
 function iniciar() {
   var btn_logar = document.getElementById("btn_inicio");
   var login_mobile = document.getElementById("login_mobile");
@@ -14,8 +26,6 @@ function iniciar() {
     wrapper_login.className = "wrapper";
     wrapper_busca.className = "desaparecer";
     wrapper_cadastro.className = "desaparecer";
-
-
   });
 
   login_mobile.addEventListener("click", function () {

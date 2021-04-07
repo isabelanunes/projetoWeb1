@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 78px;
   background-color: rgb(17, 199, 111);
@@ -47,7 +47,7 @@ li {
   width: 120px;
   height: 40px;
   display: flex;
-  padding-left: 3%;
+  padding-left: 3.5%;
 }
 
 .logo img {
@@ -129,7 +129,7 @@ li a:hover {
 /*-------------------Principal-------------------------------------*/
 
 .principal {
-  margin-top: 78px;
+  margin-top: 15px;
   z-index: -2;
 }
 
@@ -196,6 +196,7 @@ p {
 }
 
 .info {
+  position: absolute;
   z-index: -1;
 }
 
