@@ -1,4 +1,4 @@
-function logo(){
+function logo() {
   var wrapper_index = document.getElementById("wrapper_index");
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
@@ -38,9 +38,9 @@ function iniciar() {
   });
 }
 
- function teste(){
-   console.log("entrou");
- }
+function teste() {
+  console.log("entrou");
+}
 
 function pesquisar() {
 
@@ -82,43 +82,43 @@ function busca_api() {
   var search = document.getElementById("search");
 
   button.addEventListener("click", function () {
-      axios
-        .get(
-          "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-          search.value.substring(0, 4)
-        )
-        .then(function (res) {
-          console.log(res.data.response.holidays);
-          let docs = res.data.response.holidays;
-          var i = 0;
-          var control = 0;
-          for (i; i < docs.length; i++) {
-            if (docs[i].date.iso == search.value) {
-              msg.innerHTML =
-                "Date: " +
-                docs[i].date.iso +
-                "<br>" +
-                "Name: " +
-                docs[i].name +
-                "<br>" +
-                "Description: " +
-                docs[i].description +
-                "<br>" +
-                "Country: " +
-                docs[i].country.name +
-                "<br>";
-            } else {
-              control++;
-            }
-          }
-
-          if (control == i) {
+    axios
+      .get(
+        "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
+        search.value.substring(0, 4)
+      )
+      .then(function (res) {
+        console.log(res.data.response.holidays);
+        let docs = res.data.response.holidays;
+        var i = 0;
+        var control = 0;
+        for (i; i < docs.length; i++) {
+          if (docs[i].date.iso == search.value) {
             msg.innerHTML =
-              "Não foram encontrados feriados correspondentes a data " +
-              search.value;
+              "Date: " +
+              docs[i].date.iso +
+              "<br>" +
+              "Name: " +
+              docs[i].name +
+              "<br>" +
+              "Description: " +
+              docs[i].description +
+              "<br>" +
+              "Country: " +
+              docs[i].country.name +
+              "<br>";
+          } else {
+            control++;
           }
-        });
-    });
+        }
+
+        if (control == i) {
+          msg.innerHTML =
+            "Não foram encontrados feriados correspondentes a data " +
+            search.value;
+        }
+      });
+  });
 
 }
 
@@ -226,6 +226,13 @@ function cadastrar() {
           resposta = 400;
         });
     }
+
+    else {
+      mensagem.innerHTML = "Usuário e/ou senha inválidos! Tente novamente!";
+      dialog.className = "dialog show";
+      resposta = 400;
+    }
+
   });
 
   btn_OK.addEventListener("click", function () {
@@ -274,27 +281,35 @@ function login() {
   });
 
   form.addEventListener("click", function (e) {
-    var json = axios
-      .post("https://reqres.in/api/login", {
-        email: username.value,
-        password: passwd.value,
-      })
-      .then(function (r) {
-        if (r.status == 200) {
-          /*alert("Login efetuado com sucesso");*/
-          console.log('Cadastro')
-          localStorage.setItem("token", r.data.token);
-          mensagem.innerHTML = "Login realizado com sucesso!";
+
+    if (verificaEmail(username) && passwd.value.length >= 3) {
+      var json = axios
+        .post("https://reqres.in/api/login", {
+          email: username.value,
+          password: passwd.value,
+        })
+        .then(function (r) {
+          if (r.status == 200) {
+            /*alert("Login efetuado com sucesso");*/
+            console.log('Cadastro')
+            localStorage.setItem("token", r.data.token);
+            mensagem.innerHTML = "Login realizado com sucesso!";
+            dialog.className = "dialog show";
+            resposta = r.status;
+          }
+        })
+        .catch(function (error) {
+          console.log('Erro')
+          mensagem.innerHTML = "Usuário e/ou senha incorretos!";
           dialog.className = "dialog show";
-          resposta = r.status;
-        }
-      })
-      .catch(function (error) {
-        console.log('Erro')
-        mensagem.innerHTML = "Usuário e/ou senha incorretos!";
-        dialog.className = "dialog show";
-        resposta = 400;
-      });
+          resposta = 400;
+        })
+    } else {
+      mensagem.innerHTML = "Usuário e/ou senha inválidos!";
+      dialog.className = "dialog show";
+      resposta = 400;
+
+    }
   });
 
   btn_OK.addEventListener("click", function () {
