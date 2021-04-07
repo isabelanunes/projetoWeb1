@@ -1,5 +1,6 @@
 function iniciar() {
   var btn_logar = document.getElementById("btn_inicio");
+  var login_mobile = document.getElementById("login_mobile");
   var wrapper_index = document.getElementById("wrapper_index");
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
@@ -17,15 +18,56 @@ function iniciar() {
 
 
   });
+
+  login_mobile.addEventListener("click", function () {
+    wrapper_index.className = "desaparecer";
+    wrapper_login.className = "wrapper";
+    wrapper_busca.className = "desaparecer";
+    wrapper_cadastro.className = "desaparecer";
+
+
+  });
+}
+
+function pesquisar() {
+  var wrapper_index = document.getElementById("wrapper_index");
+  var wrapper_login = document.getElementById("wrapper_login");
+  var wrapper_busca = document.getElementById("wrapper_busca");
+  var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var token = localStorage.getItem("token");
+  var dialog = document.getElementById("dialog_index");
+  var mensagem = document.getElementById("mensagem_index");
+  var btn_OK_index = document.getElementById("btn_OK_index");
+  var btn_pesquisar = document.getElementById("btn_pesquisar");
+
+  btn_pesquisar.addEventListener("click", function () {
+    if (token == null) {
+      mensagem.innerHTML = "Necessário estar logado para acessar pesquisa. Faça agora o login!";
+      dialog.className = "dialog show";
+    } else {
+      wrapper_index.className = "desaparecer";
+      wrapper_login.className = "desaparecer";
+      wrapper_busca.className = "wrapper";
+      wrapper_cadastro.className = "desaparecer";
+    }
+  });
+
+  btn_OK_index.addEventListener("click", function () {
+    wrapper_index.className = "desaparecer";
+    wrapper_login.className = "wrapper";
+    wrapper_busca.className = "desaparecer";
+    wrapper_cadastro.className = "desaparecer";
+  });
+
 }
 
 function busca_api() {
-  var login = localStorage.getItem("login");
+  var token = localStorage.getItem("token");
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
   var search = document.getElementById("search");
 
-  if (login == null) {
+  if (token == null) {
     msg.innerHTML =
       "Necessário estar logado para acessar pesquisa. Faça agora o " +
       "<a href=" +
@@ -37,7 +79,7 @@ function busca_api() {
       axios
         .get(
           "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-            search.value.substring(0, 4)
+          search.value.substring(0, 4)
         )
         .then(function (res) {
           console.log(res.data.response.holidays);
@@ -73,6 +115,7 @@ function busca_api() {
         });
     });
   }
+
 }
 
 function verificaEmail(email) {
@@ -104,9 +147,9 @@ function cadastrar() {
   var email = document.getElementById("email");
   var senha = document.getElementById("senha");
   var confsenha = document.getElementById("confsenha");
-  var dialog = document.querySelector(".dialog");
-  var mensagem = document.getElementById("mensagem");
-  var btn_OK = document.getElementById("btn_OK");
+  var dialog = document.getElementById("dialog_cadastro");
+  var mensagem = document.getElementById("mensagem_cadastro");
+  var btn_OK = document.getElementById("btn_OK_cadastro");
   var resposta = 400;
 
   var val_email = document.getElementById("email-verify");
@@ -185,21 +228,29 @@ function cadastrar() {
     dialog.className = "dialog";
 
     if (resposta == 200) {
-      iniciar();
+      var wrapper_index = document.getElementById("wrapper_index");
+      var wrapper_login = document.getElementById("wrapper_login");
+      var wrapper_busca = document.getElementById("wrapper_busca");
+      var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+
+      wrapper_index.className = "desaparecer";
+      wrapper_login.className = "wrapper";
+      wrapper_busca.className = "desaparecer";
+      wrapper_cadastro.className = "desaparecer";
     }
   });
 }
 
 function login() {
   var form = document.getElementById("button_login");
-  var username = document.getElementById("username");
-  var passwd = document.getElementById("passwd");
-  var verify_user = document.getElementById("verify_username");
-  var verify_passwd = document.getElementById("verify_passwd");
+  var username = document.getElementById("username_login");
+  var passwd = document.getElementById("passwd_login");
+  var verify_user = document.getElementById("verify_username_login");
+  var verify_passwd = document.getElementById("verify_passwd_login");
   var resposta = 400;
-  var btn_OK = document.getElementById("btn_OK");
-  var dialog = document.querySelector(".dialog");
-  var mensagem = document.getElementById("mensagem");
+  var btn_OK = document.getElementById("btn_OK_login")
+  var dialog = document.getElementById("dialog_login");
+  var mensagem = document.getElementById("mensagem_login");
 
   username.addEventListener("keyup", function () {
     if (verificaEmail(username)) {
@@ -227,14 +278,15 @@ function login() {
       .then(function (r) {
         if (r.status == 200) {
           /*alert("Login efetuado com sucesso");*/
-          localStorage.setItem("login", username.value);
-          localStorage.setItem(username.value, r.data.token);
+          console.log('Cadastro')
+          localStorage.setItem("token", r.data.token);
           mensagem.innerHTML = "Login realizado com sucesso!";
           dialog.className = "dialog show";
           resposta = r.status;
         }
       })
       .catch(function (error) {
+        console.log('Erro')
         mensagem.innerHTML = "Usuário e/ou senha incorretos!";
         dialog.className = "dialog show";
         resposta = 400;
@@ -251,7 +303,7 @@ function login() {
 
     if (resposta == 200) {
       //open("index.html");
-    
+
       wrapper_busca.className = "wrapper";
       wrapper_login.className = "desaparecer";
       wrapper_index.className = "desaparecer";
@@ -262,7 +314,7 @@ function login() {
   });
 }
 
-function cadastro(){
+function cadastro() {
   var link_cadastrar = document.getElementById("link_cadastrar");
 
   var wrapper_index = document.getElementById("wrapper_index");

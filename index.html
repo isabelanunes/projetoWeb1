@@ -69,13 +69,18 @@
           <img src="images/download.png" alt="cdi" height="80px" width="275px">
         </div>
         <div class="posicaobotao">
-          <div class="btn_saibamais">
-            <a href="">SAIBA MAIS</a>
+          <div class="btn_saibamais" id="btn_pesquisar">
+            <a>Pesquisar</a>
           </div>
         </div>
       </div>
 
     </div>
+    <div class="dialog" id="dialog_index">
+      <p id="mensagem_index" class="mensagem">Necessário estar logado para acessar pesquisa. Faça agora o login!</p>
+      <input id="btn_OK_index" type="submit" class="btn_OK" value="OK">
+    </div>
+
   </div>
 
   <!-- WRAPPER LOGIN -->
@@ -87,12 +92,13 @@
       <div class="form">
         <form id="form_login">
           <div class="inputs">
-            <input id="username" class="field" type="text" name="username" placeholder="Informe o seu nome de usuário">
-            <p id="verify_username" class="verificacao"></p>
+            <input id="username_login" class="field" type="text" name="username"
+              placeholder="Informe o seu nome de usuário">
+            <p id="verify_username_login" class="verificacao"></p>
           </div>
           <div class="inputs">
-            <input id="passwd" class="field" type="password" name="pass" placeholder="Informe a sua senha">
-            <p id="verify_passwd" class="verificacao"></p>
+            <input id="passwd_login" class="field" type="password" name="pass" placeholder="Informe a sua senha">
+            <p id="verify_passwd_login" class="verificacao"></p>
           </div>
 
         </form>
@@ -101,9 +107,9 @@
         <input id="button_login" type="submit" class="btn_login" value="Continuar">
         <a class="link_cadastro" id="link_cadastrar">Não faz parte do PicPay? Cadastre-se agora.</a>
       </div>
-      <div class="dialog">
-        <p id="mensagem" class="mensagem">mensagem qualquer</p>
-        <input id="btn_OK" type="submit" class="btn_OK" value="OK">
+      <div class="dialog" id="dialog_login">
+        <p id="mensagem_login" class="mensagem">mensagem qualquer</p>
+        <input id="btn_OK_login" type="submit" class="btn_OK" value="OK">
       </div>
     </div>
   </div>
@@ -113,7 +119,7 @@
   <div class="wrapper" id="wrapper_busca">
     <div class="busca">
       <ul class="pesquisa">
-        <li></li><input id="search" class="search" type="text" name="search"
+        <li></li><input id="search" class="search" type="date" name="search"
           placeholder="Digite a data no formato YYYY-MM-DD "> </li>
         <li> <button class="button_api" id="button_api">Pesquisar</button></li>
       </ul>
@@ -149,24 +155,24 @@
         <input id="button" type="submit" class="btn_cadastro" value="Cadastrar">
       </div>
     </div>
-    <div class="dialog">
-      <p id="mensagem" class="mensagem">mensagem qualquer</p>
-      <input id="btn_OK" type="submit" class="btn_OK" value="OK">
+    <div class="dialog" id="dialog_cadastro">
+      <p id="mensagem_cadastro" class="mensagem">mensagem qualquer</p>
+      <input id="btn_OK_cadastro" type="submit" class="btn_OK" value="OK">
     </div>
   </div>
-
   </div>
 
   <!--- rodape para mobile -->
 
   <footer>
     <div class="btn_baixeeaproveite">
-      <a href="">BAIXE E APROVEITE</a>
+      <a id="login_mobile">Login</a>
     </div>
   </footer>
 </body>
 
 <script>
+  pesquisar();
   iniciar();
   busca_api();
   login();

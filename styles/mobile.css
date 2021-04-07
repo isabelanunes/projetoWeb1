@@ -209,11 +209,14 @@ p {
 .btn_baixeeaproveite {
   height: 46px;
   width: 196px;
+  margin: 0;
   position: absolute;
+  text-align: center;
   justify-content: center;
   background-color: rgb(66, 109, 255);
   border-radius: 9999px;
   margin-top: 12px;
+  padding: 0;
 }
 
 .btn_baixeeaproveite a {
@@ -235,7 +238,6 @@ p {
   line-height: 36px;
   font-weight: inherit;
   tab-size: 4;
-  padding-left: 24px;
   padding-top: 6px;
 }
 
@@ -292,6 +294,13 @@ footer {
 
 .search:focus {
   outline: 0;
+}
+
+.btn_login:hover{
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+  border:none !important;
 }
 
 .search:placeholder {
