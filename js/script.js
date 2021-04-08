@@ -3,11 +3,14 @@ function logo() {
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var footer = document.getElementById("footer");
 
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
   wrapper_index.className = "wrapper";
+  footer.className = "footer";
+
 }
 
 function iniciar() {
@@ -349,4 +352,9 @@ function cadastro() {
 
   });
 
+}
+
+function mobile(){
+  var footer = document.getElementById("footer");
+  footer.className = "desaparecer";
 }

@@ -2,9 +2,9 @@
 
 .wrapper {
   margin: 0 auto;
-  width: 100%;
   display: flex;
   max-width: 540px;
+  position: relative;
 }
 
 /*-------------------Menu-------------------------------------*/
@@ -122,25 +122,28 @@ li a:hover {
 .texto {
   margin: 0;
   padding: 0;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
+  padding-top:5%;
 }
 
 .info {
-  margin: 0;
-  padding: 0;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
+
 .image_iza {
   margin: 0;
   position: absolute;
   width: 100%;
   height: auto;
   padding: 0;
-  padding-top: 37%;
+  padding-top: 45%;
 }
 
 .image_iza img {
@@ -193,13 +196,14 @@ p {
 }
 
 .image_cdi {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   padding: 0;
-  background-color: black;
-  width: fit-content;
   height: auto;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
 }
 
 .btn_saibamais {
@@ -241,7 +245,7 @@ p {
   padding-top: 6px;
 }
 
-footer {
+.footer {
   background-color: rgb(17, 199, 111);
   bottom: 0px;
   border-top-left-radius: 20px;
