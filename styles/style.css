@@ -27,6 +27,8 @@ header {
   height: 78px;
   background-color: rgb(17, 199, 111);
   margin: 0;
+  min-width:1300px;
+
 }
 
 .list {
@@ -329,7 +331,7 @@ footer {
 .cadastro {
   display: block;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;

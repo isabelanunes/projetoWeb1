@@ -4,13 +4,14 @@ function logo() {
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
   var footer = document.getElementById("footer");
+  var dialog = document.getElementById("dialog_index");
 
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
   wrapper_index.className = "wrapper";
   footer.className = "footer";
-
+  dialog.className = "desaparecer";
 }
 
 function iniciar() {

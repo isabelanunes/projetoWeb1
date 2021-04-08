@@ -3,9 +3,10 @@
 .wrapper {
   margin: 0 auto;
   display: flex;
-  max-width: 540px;
+  max-width: 1500px;
   position: relative;
 }
+
 
 /*-------------------Menu-------------------------------------*/
 
@@ -30,6 +31,8 @@ header {
   margin-top: 0;
   top: 0;
   z-index: 9999;
+  min-width: 540px;
+
 }
 
 .list {
@@ -86,8 +89,7 @@ li a:hover {
 .bt_elementos {
   /*BOTÃO DE MENU PARA A VERSÃO MOBILE*/
   display: flex;
-  position: absolute;
-  right: 28px;
+  position: fixed;
   top: 19px;
 }
 
@@ -98,6 +100,8 @@ li a:hover {
   cursor: pointer; /* Mouse pointer on hover */
   margin: 0;
   font-size: 30px;
+  position: fixed;
+  right: 10px;
 }
 
 /*-------------------Principal-------------------------------------*/
@@ -188,7 +192,7 @@ p {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   text-transform: uppercase;
   padding: 0;
-  padding-top: 60%;
+  padding-top: 55%;
   display: flex;
   position: relative;
   align-items: center;
@@ -354,4 +358,5 @@ p {
 
 .login{
   width: 100%;
+  margin-top: 50px;
 }
