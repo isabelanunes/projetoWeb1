@@ -17,13 +17,12 @@ module.exports = class Users {
     return result;
   }
 
-  static async findUser(email, password) {
-    console.log(email, password);
+  static async findUser(email) {
+
     const conn = await MongoClient.connect(url);
     const db = conn.db();
     let result = await db.collection("users").findOne({
       email: email,
-      password: password,
     });
 
     conn.close();

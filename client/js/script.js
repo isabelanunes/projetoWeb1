@@ -42,10 +42,6 @@ function iniciar() {
   });
 }
 
-function teste() {
-  console.log("entrou");
-}
-
 function pesquisar() {
 
   var wrapper_index = document.getElementById("wrapper_index");
@@ -212,7 +208,7 @@ function cadastrar() {
   btn_cadastrar.addEventListener("click", function () {
     if (aux_email == true && aux_senha == true) {
       var json = axios
-        .post("https://reqres.in/api/register", {
+        .post("localhost:3000/users", {
           email: email.value,
           password: senha.value,
         })
@@ -355,7 +351,7 @@ function cadastro() {
 
 }
 
-function mobile(){
+function mobile() {
   var footer = document.getElementById("footer");
   footer.className = "desaparecer";
 }
