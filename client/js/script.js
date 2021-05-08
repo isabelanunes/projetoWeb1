@@ -37,13 +37,10 @@ function iniciar() {
     wrapper_login.className = "wrapper";
     wrapper_busca.className = "desaparecer";
     wrapper_cadastro.className = "desaparecer";
-
-
   });
 }
 
 function pesquisar() {
-
   var wrapper_index = document.getElementById("wrapper_index");
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
@@ -57,7 +54,8 @@ function pesquisar() {
   btn_pesquisar.addEventListener("click", function () {
     console.log("clicou");
     if (token == undefined) {
-      mensagem.innerHTML = "Necessário estar logado para acessar pesquisa. Faça agora o login!";
+      mensagem.innerHTML =
+        "Necessário estar logado para acessar pesquisa. Faça agora o login!";
       dialog.className = "dialog show";
     } else {
       wrapper_index.className = "desaparecer";
@@ -73,7 +71,6 @@ function pesquisar() {
     wrapper_busca.className = "desaparecer";
     wrapper_cadastro.className = "desaparecer";
   });
-
 }
 
 function busca_api() {
@@ -85,7 +82,7 @@ function busca_api() {
     axios
       .get(
         "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-        search.value.substring(0, 4)
+          search.value.substring(0, 4)
       )
       .then(function (res) {
         console.log(res.data.response.holidays);
@@ -119,7 +116,6 @@ function busca_api() {
         }
       });
   });
-
 }
 
 function verificaEmail(email) {
@@ -208,7 +204,7 @@ function cadastrar() {
   btn_cadastrar.addEventListener("click", function () {
     if (aux_email == true && aux_senha == true) {
       var json = axios
-        .post("localhost:3000/users", {
+        .post("http://localhost:3000/users", {
           email: email.value,
           password: senha.value,
         })
@@ -225,14 +221,11 @@ function cadastrar() {
           dialog.className = "dialog show";
           resposta = 400;
         });
-    }
-
-    else {
+    } else {
       mensagem.innerHTML = "Usuário e/ou senha inválidos! Tente novamente!";
       dialog.className = "dialog show";
       resposta = 400;
     }
-
   });
 
   btn_OK.addEventListener("click", function () {
@@ -259,7 +252,7 @@ function login() {
   var verify_user = document.getElementById("verify_username_login");
   var verify_passwd = document.getElementById("verify_passwd_login");
   var resposta = 400;
-  var btn_OK = document.getElementById("btn_OK_login")
+  var btn_OK = document.getElementById("btn_OK_login");
   var dialog = document.getElementById("dialog_login");
   var mensagem = document.getElementById("mensagem_login");
 
@@ -281,7 +274,6 @@ function login() {
   });
 
   form.addEventListener("click", function (e) {
-
     if (verificaEmail(username) && passwd.value.length >= 3) {
       var json = axios
         .post("https://reqres.in/api/login", {
@@ -291,7 +283,7 @@ function login() {
         .then(function (r) {
           if (r.status == 200) {
             /*alert("Login efetuado com sucesso");*/
-            console.log('Cadastro')
+            console.log("Cadastro");
             localStorage.setItem("token", r.data.token);
             mensagem.innerHTML = "Login realizado com sucesso!";
             dialog.className = "dialog show";
@@ -299,16 +291,15 @@ function login() {
           }
         })
         .catch(function (error) {
-          console.log('Erro')
+          console.log("Erro");
           mensagem.innerHTML = "Usuário e/ou senha incorretos!";
           dialog.className = "dialog show";
           resposta = 400;
-        })
+        });
     } else {
       mensagem.innerHTML = "Usuário e/ou senha inválidos!";
       dialog.className = "dialog show";
       resposta = 400;
-
     }
   });
 
@@ -319,7 +310,6 @@ function login() {
     var wrapper_index = document.getElementById("wrapper_index");
     var wrapper_cadastro = document.getElementById("wrapper_cadastro");
 
-
     if (resposta == 200) {
       //open("index.html");
 
@@ -327,8 +317,6 @@ function login() {
       wrapper_login.className = "desaparecer";
       wrapper_index.className = "desaparecer";
       wrapper_cadastro.className = "desaparecer";
-
-
     }
   });
 }
@@ -346,9 +334,7 @@ function cadastro() {
     wrapper_login.className = "desaparecer";
     wrapper_busca.className = "desaparecer";
     wrapper_index.className = "desaparecer";
-
   });
-
 }
 
 function mobile() {
