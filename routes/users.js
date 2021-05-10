@@ -17,7 +17,17 @@ router.post("/", async function (req, res, next) {
   if (find) {
     res.status(404).json({ data: { mensagem: "usuario já cadastrado" } });
   } else {
-    let users = await Data.insertUser(req.body.email, req.body.password);
+    let users = await Data.insertUser(req.body.email, req.body.password, false);
+    res.status(200).json(users);
+  }
+});
+
+router.post("/admin", async function (req, res, next) {
+  let find = await Data.findUser(req.body.email);
+  if (find) {
+    res.status(404).json({ data: { mensagem: "usuario já cadastrado" } });
+  } else {
+    let users = await Data.insertUser(req.body.email, req.body.password, true);
     res.status(200).json(users);
   }
 });

@@ -8,6 +8,7 @@ var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/login");
 var app = express();
 let cors = require("cors");
+const bodyParser = require('body-parser');
 
 app.use((req, res, next) => {
   //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
@@ -52,5 +53,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 module.exports = app;
