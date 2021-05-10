@@ -40,4 +40,14 @@ module.exports = class Users {
 
     return result;
   }
+
+  static async find() {
+    const conn = await MongoClient.connect(url);
+    const db = conn.db();
+    let result = await db.collection("users").find();
+
+    conn.close();
+
+    return result;
+  }
 };

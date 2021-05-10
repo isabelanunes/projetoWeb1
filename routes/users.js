@@ -4,7 +4,7 @@ var Data = require("../model/db");
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  let users = await Data.find();
+  let users = Data.find();
   res.json(users);
 });
 // /uses/data
