@@ -2,7 +2,7 @@
   "name": "projetoweb1",
   "version": "1.0.0",
   "description": "<h1> Projeto 1 - Programação para Web </h1>  <p>  HTML e CSS: Este projeto consiste da elaboração de uma página web de conteúdo estatico, utilizando apenas as tecnologias HTML  e CSS para construção de um layout de um website. </p>",
-  "main": "./server/app.js",
+  "main": "./client/index.html",
   "scripts": {
     "start": "node ./server/bin/www"
   },
