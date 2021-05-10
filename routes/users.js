@@ -2,11 +2,10 @@ var express = require("express");
 var router = express.Router();
 var Data = require("../model/db");
 
-
-
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+  let users = await Data.find();
+  res.json(users);
 });
 // /uses/data
 router.get("/data", function (req, res, next) {
