@@ -1,0 +1,362 @@
+/*-------------------wrapper-------------------------------------*/
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1500px;
+  position: relative;
+}
+
+
+/*-------------------Menu-------------------------------------*/
+
+@font-face {
+  font-family: "TuskerGrotesk";
+  src: url("../fonts/TuskerGrotesk-5500Medium.woff2");
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f1e8;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  height: 73px;
+  background-color: rgb(17, 199, 111);
+  position: fixed;
+  margin-top: 0;
+  top: 0;
+  z-index: 9999;
+  min-width: 540px;
+
+}
+
+.list {
+  display: none;
+}
+
+.menu li {
+  display: none;
+  margin: 10px;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  display: inline-block;
+  position: relative;
+  justify-content: start;
+}
+
+.logo img {
+  height: 41px;
+  width: 100%;
+  /*distância entre o conteúdo e a borda superior | direita | inferior | esquerda */
+}
+
+.list {
+  float: left;
+}
+
+.menu ul {
+  display: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: none;
+  color: rgb(204, 204, 204);
+  opacity: 0.75;
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+
+.bt_baixeoapp {
+  display: none;
+}
+
+.bt_elementos {
+  /*BOTÃO DE MENU PARA A VERSÃO MOBILE*/
+  display: flex;
+  position: fixed;
+  top: 19px;
+}
+
+.bt_elementos i {
+  color: rgb(240, 241, 232);
+  text-decoration: inherit;
+  border: none; /* Remove borders */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin: 0;
+  font-size: 30px;
+  position: fixed;
+  right: 10px;
+}
+
+/*-------------------Principal-------------------------------------*/
+.principal {
+  width: 100%;
+  height: auto;
+}
+
+.texto h1 {
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  color: #223322;
+  font-weight: inherit;
+  margin-bottom: 0;
+  display: flex;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 15%;
+}
+
+.texto {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding-top:5%;
+}
+
+.info {
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_iza {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  padding-top: 45%;
+}
+
+.image_iza img {
+  height: auto;
+  width: 100%;
+}
+
+.texto2 {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto h2 {
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  color: #223322;
+  margin: 0;
+  padding: 0px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  width: auto;
+  float: left;
+  justify-content: center;
+}
+
+.espaço {
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  text-transform: uppercase;
+  padding: 0;
+  padding-top: 55%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_cdi {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+.btn_saibamais {
+  display: none;
+}
+
+.btn_baixeeaproveite {
+  height: 46px;
+  width: 196px;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(66, 109, 255);
+  border-radius: 9999px;
+  margin-top: 12px;
+  padding: 0;
+}
+
+.btn_baixeeaproveite a {
+  color: #fff;
+  text-decoration: inherit;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  line-height: 10px;
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  display: inline-block;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: inherit;
+  tab-size: 4;
+  padding-top: 6px;
+}
+
+.footer {
+  background-color: rgb(17, 199, 111);
+  bottom: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  height: 50px;
+  justify-content: center;
+  left: 0px;
+  line-height: 24px;
+  padding: 0;
+  position: fixed;
+  right: 0px;
+  tab-size: 4;
+  text-size-adjust: 100%;
+  width: 100%;
+  z-index: 20;
+  height: 70px;
+}
+
+/*-------------------Busca-------------------------------------*/
+.busca {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 100px;
+  flex-direction: column;
+}
+
+.pesquisa,
+.result_busca {
+  padding: 0;
+}
+
+.search {
+  font-family: "SF Pro Text Regular", sans-serif;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  visibility: visible;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.search:focus {
+  outline: 0;
+}
+
+.btn_login:hover{
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+  border:none !important;
+}
+
+.search:placeholder {
+  color: #c7c6c6;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button_api {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 0px;
+  height: auto;
+  margin-top:  10px;
+  background-color: rgb(66, 109, 255);
+  text-transform: uppercase;
+  font-family: TuskerGrotesk, Arial, Helvetica, sans-serif;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 24px;
+  font-weight: inherit;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: inherit;
+  border: none;
+}
+
+.button_api:hover {
+  background-color: rgba(54, 90, 214);
+  text-decoration: none;
+  transition: ease-in-out 0.5s;
+}
+
+.busca a {
+  font-size: 18px;
+  color: black;
+}
+
+.login{
+  width: 100%;
+  margin-top: 50px;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <!--identifica o tamanho da tela utilizado-->
+
+  <title>Pague tudo com o seu PicPay.</title>
+  <link rel="shortcut icon" href="images/icon2.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles\style.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 700px)" href="styles\mobile.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+  <header class="menu">
+    <div class="wrapper">
+      <div class="logo" onclick="logo()">
+        <img src="images/logo-picpay-white.svg" />
+      </div>
+      <div class="list">
+        <ul>
+          <li><a href="">Sobre nós</a></li>
+          <li><a href="">Dúvidas Frequentes</a>
+          <li><a href="#">Central de Doações</a>
+          <li><a href="#">Gerador de QR Code</a>
+          <li><a href="#">Integrações</a></li>
+        </ul>
+      </div>
+      <div class="botao_header">
+        <div class="bt_baixeoapp">
+          <a id="btn_inicio">Login</a>
+        </div>
+      </div>
+
+      <!--botão de menu para telas pequenas-->
+      <div class="bt_elementos">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- WRAPPER INDEX -->
+  <div class="wrapper" id="wrapper_index">
+    <div class="principal">
+      <div class="info">
+        <div class="image_iza">
+          <img src="images/iza_personalizado.webp" alt="img1" width="650px">
+        </div>
+        <div class="texto">
+          <h1>PIX NO PICPAY</h1>
+          <div class='texto2'>
+            <h2>É DINHEIRO NA HORA</h2>
+            <div class=espaço></div>
+            <h2>E SEM TAXAS.</h2>
+          </div>
+          <p>E AQUI SEU $$$ RENDE +</p>
+        </div>
+        <div class="image_cdi">
+          <img src="images/download.png" alt="cdi" height="80px" width="275px">
+        </div>
+        <div class="posicaobotao">
+          <div class="btn_saibamais" id="btn_pesquisar">
+            <a>Pesquisar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="dialog" id="dialog_index">
+      <p id="mensagem_index" class="mensagem">Necessário estar logado para acessar pesquisa. Faça agora o login!</p>
+      <input id="btn_OK_index" type="submit" class="btn_OK" value="OK">
+    </div>
+
+  </div>
+
+  <!-- WRAPPER LOGIN -->
+  <div class="wrapper" id="wrapper_login">
+    <div class="login">
+      <div class="sessao">
+        <h1>Iniciar sessão</h1>
+      </div> ㅤㅤㅤ
+      <div class="form">
+        <form id="form_login">
+          <div class="inputs">
+            <input id="username_login" class="field" type="text" name="username"
+              placeholder="Informe o seu nome de usuário">
+            <p id="verify_username_login" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="passwd_login" class="field" type="password" name="pass" placeholder="Informe a sua senha">
+            <p id="verify_passwd_login" class="verificacao"></p>
+          </div>
+
+        </form>
+      </div>
+      <div class="logar">
+        <input id="button_login" type="submit" class="btn_login" value="Continuar">
+        <a class="link_cadastro" id="link_cadastrar">Não faz parte do PicPay? Cadastre-se agora.</a>
+      </div>
+      <div class="dialog" id="dialog_login">
+        <p id="mensagem_login" class="mensagem">mensagem qualquer</p>
+        <input id="btn_OK_login" type="submit" class="btn_OK" value="OK">
+      </div>
+    </div>
+  </div>
+
+  <!-- WRAPPER BUSCA -->
+
+  <div class="wrapper" id="wrapper_busca">
+    <div class="busca">
+      <ul class="pesquisa">
+        <li></li><input id="search" class="search" type="date" name="search"
+          placeholder="Digite a data no formato YYYY-MM-DD "> </li>
+        <li> <button class="button_api" id="button_api">Pesquisar</button></li>
+      </ul>
+      <a>Resultados da Busca:</a>
+      <ul class="result_busca" id="result"></ul>
+    </div>
+  </div>
+
+  <!-- WRAPPER CADASTRO -->
+
+  <div class="wrapper" id="wrapper_cadastro">
+    <div class="cadastro">
+      <div class="sessao">
+        <h1>Faça parte do Picpay!</h1>
+      </div> ㅤㅤㅤ
+      <div class="form">
+        <form id="form_cadastro">
+          <div class="inputs">
+            <input id="email" type="text" class="field" placeholder="E-mail">
+            <p id="email-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="senha" type="password" class="field" placeholder="Senha">
+            <p id="senha-verify" class="verificacao"></p>
+          </div>
+          <div class="inputs">
+            <input id="confsenha" type="password" class="field" placeholder="Confirme sua Senha">
+            <p id="confsenha-verify" class="verificacao"></p>
+          </div>
+        </form>
+      </div>
+      <div class="cadastrar">
+        <input id="button" type="submit" class="btn_cadastro" value="Cadastrar">
+      </div>
+    </div>
+    <div class="dialog" id="dialog_cadastro">
+      <p id="mensagem_cadastro" class="mensagem">mensagem qualquer</p>
+      <input id="btn_OK_cadastro" type="submit" class="btn_OK" value="OK">
+    </div>
+  </div>
+  </div>
+
+  <!--- rodape para mobile -->
+
+  <footer id="footer" class="footer">
+    <div class="btn_baixeeaproveite" id="login_mobile" onclick="mobile()">
+      <a>Login</a>
+    </div>
+  </footer>
+</body>
+
+<script type="text/javascript">
+  pesquisar();
+  iniciar();
+  busca_api();
+  login();
+  cadastrar();
+  cadastro();
+  logo();
+</script>
+
+</html>
