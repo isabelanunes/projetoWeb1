@@ -204,7 +204,7 @@ function cadastrar() {
   btn_cadastrar.addEventListener("click", function () {
     if (aux_email == true && aux_senha == true) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/users", {
+        .post("localhost:3000/users", {
           email: email.value,
           password: senha.value,
         })
@@ -276,7 +276,7 @@ function login() {
   form.addEventListener("click", function (e) {
     if (verificaEmail(username) && passwd.value.length >= 3) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/login", {
+        .post("localhost:3000/login", {
           email: username.value,
           password: passwd.value,
         })
