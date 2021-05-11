@@ -1,8 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
-//const url = process.env.BD;
-
-const url = "mongodb+srv://admin:admin@cluster0.cjg76.mongodb.net/db_web?retryWrites=true&w=majority";
+const url = process.env.BD;
 
 module.exports = class Users {
   static async insertUser(email, password, admin) {
