@@ -6,9 +6,11 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/login");
+var autenticacao = require("./routes/autenticacao");
+var adm = require("./routes/adm");
 var app = express();
 let cors = require("cors");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 app.use((req, res, next) => {
   //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
@@ -37,6 +39,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
+app.use("/autenticacao", autenticacao);
+app.use("/adm", adm);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -56,6 +60,5 @@ app.use(function (err, req, res, next) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 
 module.exports = app;
