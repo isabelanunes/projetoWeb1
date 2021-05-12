@@ -73,6 +73,24 @@ function pesquisar() {
   });
 }
 
+
+function upload() {
+  var button = document.getElementById("button_upload");
+  var token = localStorage.getItem("token");
+
+  button.addEventListener("click", function () {
+    console.log(token);
+    axios.get("http://localhost:3000/adm", {
+      headers: {
+        "authorization": token
+      }
+    })
+      .then(function (res) {
+        console.log(res.data.response);
+      });
+  });
+}
+
 function busca_api() {
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
@@ -82,7 +100,7 @@ function busca_api() {
     axios
       .get(
         "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-          search.value.substring(0, 4)
+        search.value.substring(0, 4)
       )
       .then(function (res) {
         console.log(res.data.response.holidays);
@@ -204,7 +222,7 @@ function cadastrar() {
   btn_cadastrar.addEventListener("click", function () {
     if (aux_email == true && aux_senha == true) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/users", {
+        .post("http://localhost:3000/users", {
           email: email.value,
           password: senha.value,
         })
@@ -276,7 +294,7 @@ function login() {
   form.addEventListener("click", function (e) {
     if (verificaEmail(username) && passwd.value.length >= 3) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/login", {
+        .post("http://localhost:3000/login", {
           email: username.value,
           password: passwd.value,
         })
