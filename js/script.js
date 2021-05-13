@@ -93,7 +93,12 @@ function upload() {
           },
       })
       .then(function (res) {
-        console.log(res.data.response);
+        console.log(res.data.adm);
+        if((res.data.adm) == true){
+          console.log('ok');
+        } else {
+          console.log('nok');
+        }
       });
   });
 }
