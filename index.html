@@ -121,8 +121,11 @@
       <ul class="pesquisa">
         <li></li><input id="search" class="search" type="date" name="search"
           placeholder="Digite a data no formato YYYY-MM-DD "> </li>
-        <li> <button class="button_api" id="button_api">Pesquisar</button></li>
-        <li> <button class="button_upload" id="button_upload">Upload</button></li>
+        <li> <button class="button_api" id="button_api">Pesquisar</button>
+          <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="filetoupload" class="button_upload" id="button_upload">
+          </form>
+        </li>
       </ul>
       <a>Resultados da Busca:</a>
       <ul class="result_busca" id="result"></ul>
