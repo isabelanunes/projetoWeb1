@@ -77,9 +77,9 @@ function pesquisar() {
 
 function upload() {
   var button = document.getElementById("button_upload");
-  var token = localStorage.getItem("token");
 
   button.addEventListener("click", function () {
+    var token = localStorage.getItem("token");
     console.log(token);
     axios
       .get("https://api-clone-picpay.herokuapp.com/adm", {
