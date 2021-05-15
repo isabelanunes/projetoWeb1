@@ -8,12 +8,14 @@ function logo() {
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var wrapper_upload = document.getElementById("wrapper_upload");
   var footer = document.getElementById("footer");
   var dialog = document.getElementById("dialog_index");
 
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
+  wrapper_upload.className = "desaparecer";
   wrapper_index.className = "wrapper";
   footer.className = "footer";
   dialog.className = "desaparecer";
@@ -26,15 +28,18 @@ function iniciar() {
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var wrapper_upload = document.getElementById("wrapper_upload");
 
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
+  wrapper_upload.className = "desaparecer";
   btn_logar.addEventListener("click", function () {
     wrapper_index.className = "desaparecer";
     wrapper_login.className = "wrapper";
     wrapper_busca.className = "desaparecer";
     wrapper_cadastro.className = "desaparecer";
+    wrapper_upload.className = "desaparecer";
   });
 
   login_mobile.addEventListener("click", function () {
@@ -42,6 +47,7 @@ function iniciar() {
     wrapper_login.className = "wrapper";
     wrapper_busca.className = "desaparecer";
     wrapper_cadastro.className = "desaparecer";
+    wrapper_upload.className = "desaparecer";
   });
 }
 
@@ -50,6 +56,7 @@ function pesquisar() {
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var wrapper_upload = document.getElementById("wrapper_upload");
   var token = localStorage.getItem("token");
   var dialog = document.getElementById("dialog_index");
   var mensagem = document.getElementById("mensagem_index");
@@ -67,6 +74,7 @@ function pesquisar() {
       wrapper_login.className = "desaparecer";
       wrapper_busca.className = "wrapper";
       wrapper_cadastro.className = "desaparecer";
+      wrapper_upload.className = "desaparecer";
     }
   });
 
@@ -79,36 +87,25 @@ function pesquisar() {
 }
 
 function upload() {
+  var wrapper_index = document.getElementById("wrapper_index");
+  var wrapper_login = document.getElementById("wrapper_login");
+  var wrapper_busca = document.getElementById("wrapper_busca");
+  var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var wrapper_upload = document.getElementById("wrapper_upload");
+
+  wrapper_index.className = "desaparecer";
+  wrapper_login.className = "desaparecer";
+  wrapper_busca.className = "desaparecer";
+  wrapper_cadastro.className = "desaparecer";
+  wrapper_upload.className = "wrapper";
   var button = document.getElementById("button_upload");
-
-  button.addEventListener("click", function () {
-    var token = localStorage.getItem("token");
-    console.log(token);
-    axios
-      .get(var_api + "adm", {
-          headers: {
-            "Authorization" : token
-          },
-      })
-      .then(function (r) {
-        if (r.status == 200) {
-          alert("Usuário Admin");
-        }
-
-        else if(r.status == 403){
-          alert("Usuário Não é Admin");
-        }
-      })
-      .catch(function (error) {
-        alert("Usuário Não é Admin");
-      });
-  });
 }
 
 function busca_api() {
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
   var search = document.getElementById("search");
+  var button_upload = document.getElementById("button_upload_page");
 
   button.addEventListener("click", function () {
     axios
@@ -147,6 +144,31 @@ function busca_api() {
             search.value;
         }
       });
+  });
+
+  button_upload.addEventListener("click", function () {
+
+    var token = localStorage.getItem("token");
+    console.log(token);
+    axios
+      .get(var_api + "adm", {
+          headers: {
+            "Authorization" : token
+          },
+      })
+      .then(function (r) {
+        if (r.status == 200) {
+          upload();
+        }
+
+        else if(r.status == 403){
+          alert("Usuário Não é Admin");
+        }
+      })
+      .catch(function (error) {
+        alert("Usuário Não é Admin");
+      });
+
   });
 }
 
@@ -343,6 +365,7 @@ function login() {
     var wrapper_login = document.getElementById("wrapper_login");
     var wrapper_index = document.getElementById("wrapper_index");
     var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+    var wrapper_upload = document.getElementById("wrapper_upload");
 
     if (resposta == 200) {
       //open("index.html");
@@ -351,6 +374,8 @@ function login() {
       wrapper_login.className = "desaparecer";
       wrapper_index.className = "desaparecer";
       wrapper_cadastro.className = "desaparecer";
+      wrapper_upload.className = "desaparecer";
+      
     }
   });
 }
@@ -362,12 +387,14 @@ function cadastro() {
   var wrapper_login = document.getElementById("wrapper_login");
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
+  var wrapper_upload = document.getElementById("wrapper_upload");
 
   link_cadastrar.addEventListener("click", function () {
     wrapper_cadastro.className = "wrapper";
     wrapper_login.className = "desaparecer";
     wrapper_busca.className = "desaparecer";
     wrapper_index.className = "desaparecer";
+    wrapper_upload.className = "desaparecer";
   });
 }
 

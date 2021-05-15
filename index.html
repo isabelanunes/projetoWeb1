@@ -73,7 +73,7 @@
             <a>Pesquisar</a>
           </div>
         </div>
-      </div>
+        </div>
 
     </div>
     <div class="dialog" id="dialog_index">
@@ -122,15 +122,32 @@
         <li></li><input id="search" class="search" type="date" name="search"
           placeholder="Digite a data no formato YYYY-MM-DD "> </li>
         <li> <button class="button_api" id="button_api">Pesquisar</button>
-          <form action="/" method="post" enctype="multipart/form-data">
-            <input type="file" name="filetoupload" class="button_upload" id="button_upload">
-          </form>
+           <button class="button_api" id="button_upload_page">Upload</button>
         </li>
       </ul>
       <a>Resultados da Busca:</a>
       <ul class="result_busca" id="result"></ul>
     </div>
   </div>
+
+    <!-- WRAPPER UPLOAD -->
+
+    <div class="wrapper" id="wrapper_upload">
+      <div class="busca">
+        <ul class="pesquisa">
+          <li></li><input id="search" class="search" type="date" name="search"
+            placeholder="Digite a data no formato YYYY-MM-DD ">
+            <input id="search" class="search" type="text" name="search"
+            placeholder="Descrição">
+          <li> 
+            <form action="/" method="post" enctype="multipart/form-data">
+              <input type="file" name="filetoupload" class="button_escolher" id="button_escolher">
+            </form>
+            <button class="button_api" id="button_upload">Upload</button>    
+          </li>
+        </ul>
+      </div>
+    </div>
 
   <!-- WRAPPER CADASTRO -->
 
@@ -182,8 +199,9 @@
   login();
   cadastrar();
   cadastro();
-  logo();
   upload();
+  logo();
+  
 </script>
 
 </html>
