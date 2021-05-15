@@ -1,0 +1,4 @@
+{
+  "heroku": "process.env.BD",
+  "local": "mongodb+srv://admin:admin@cluster0.cjg76.mongodb.net/db_web?retryWrites=true&w=majority"
+}

@@ -22,23 +22,25 @@ router.get("/data", function (req, res, next) {
 router.post("/", async function (req, res, next) {
   let find = await Data.findUser(req.body.email); // aqui verifica se já existe usuario com msm email
   let verify = await Data.verifyUser(req.body.email, req.body.password); // confere dados
-  const payload = JSON.stringify({
-    email: `${req.body.email}`,
-    admin: `${verify.admin}`,
-  });
-  console.log(payload);
+  const payload = null;
   if (find) {
     if (verify) {
+      payload = JSON.stringify({
+        email: `${req.body.email}`,
+        admin: `${verify.admin}`,
+      });
       return res.status(200).json({
         token: generateToken({ payload }),
       });
     } else {
-      res
+      return res
         .status(404)
         .json({ data: { mensagem: "Usuário e senha não conferem!" } });
     }
   } else {
-    res.status(404).json({ data: { mensagem: "Usuário não encontrado!" } });
+    return res
+      .status(404)
+      .json({ data: { mensagem: "Usuário não encontrado!" } });
   }
 });
 

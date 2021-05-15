@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     var decoded = jwt.decode(authHeader, { complete: true });
     let admin = JSON.parse(decoded.payload.payload).admin;
     if (admin == "false")
-      return res.status(400).send({ error: "Usuário não tem permissão!" });
+      return res.status(403).send({ error: "Usuário não tem permissão!" });
 
     console.log(admin);
     return next();
