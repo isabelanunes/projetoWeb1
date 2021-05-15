@@ -1,4 +1,7 @@
-const api = "https://api-clone-picpay.herokuapp.com/";
+const heroku = "https://api-clone-picpay.herokuapp.com/";
+const local = "http://localhost:3000/";
+const var_api = local;
+
 
 function logo() {
   var wrapper_index = document.getElementById("wrapper_index");
@@ -82,18 +85,22 @@ function upload() {
     var token = localStorage.getItem("token");
     console.log(token);
     axios
-      .get("https://api-clone-picpay.herokuapp.com/adm", {
+      .get(var_api + "adm", {
           headers: {
             "Authorization" : token
           },
       })
-      .then(function (res) {
-        console.log(res.data.adm);
-        if((res.data.adm) == true){
-          console.log('ok');
-        } else {
-          console.log('nok');
+      .then(function (r) {
+        if (r.status == 200) {
+          alert("Usuário Admin");
         }
+
+        else if(r.status == 403){
+          alert("Usuário Não é Admin");
+        }
+      })
+      .catch(function (error) {
+        alert("Usuário Não é Admin");
       });
   });
 }
@@ -231,7 +238,7 @@ function cadastrar() {
 
     if (aux_email == true && aux_senha == true) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/users", {
+        .post(var_api + "users", {
           email: email.value,
           password: senha.value,
         })
@@ -303,7 +310,7 @@ function login() {
   form.addEventListener("click", function (e) {
     if (verificaEmail(username) && passwd.value.length >= 3) {
       var json = axios
-        .post("https://api-clone-picpay.herokuapp.com/login", {
+        .post(var_api + "login", {
           email: username.value,
           password: passwd.value,
         })

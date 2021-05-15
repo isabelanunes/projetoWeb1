@@ -1,0 +1,4 @@
+{
+    "heroku": "https://api-clone-picpay.herokuapp.com/",
+    "local": "http://localhost:3000/"
+}
