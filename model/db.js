@@ -2,6 +2,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 const variaveis_ambiente = require("../config/bd.json");
 const url = variaveis_ambiente.local;
+
 module.exports = class Users {
   static async insertUser(email, password, admin) {
     const conn = await MongoClient.connect(url);
@@ -45,8 +46,8 @@ module.exports = class Users {
   static async find() {
     const conn = await MongoClient.connect(url);
     const db = conn.db();
-    let result = await db.collection("users").find();
-
+    let result = await db.collection("users").find({}).toArray();
+    // console.log(result);
     conn.close();
 
     return result;

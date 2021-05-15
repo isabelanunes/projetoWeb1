@@ -5,11 +5,9 @@ var Data = require("../model/db");
 /* GET users listing. */
 router.get("/", function (req, res, next) {
   let users = Data.find();
-  res.json(users);
-});
-// /uses/data
-router.get("/data", function (req, res, next) {
-  res.send("respond with a resource");
+  users.then((result) => {
+    res.json(JSON.parse(JSON.stringify(result)));
+  });
 });
 
 router.post("/", async function (req, res, next) {

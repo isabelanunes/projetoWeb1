@@ -8,6 +8,9 @@ var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/login");
 var autenticacao = require("./routes/autenticacao");
 var adm = require("./routes/adm");
+var upload = require("./routes/upload");
+var download = require("./routes/download");
+
 var app = express();
 let cors = require("cors");
 const bodyParser = require("body-parser");
@@ -28,6 +31,8 @@ app.use("/users", usersRouter);
 app.use("/login", loginRouter);
 app.use("/autenticacao", autenticacao);
 app.use("/adm", adm);
+app.use("/upload", upload);
+app.use("/download", download);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
