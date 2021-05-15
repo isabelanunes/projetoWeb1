@@ -84,11 +84,6 @@ function upload() {
     axios
       .get("https://api-clone-picpay.herokuapp.com/adm", {
           headers: {
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
             "Authorization" : token
           },
       })
@@ -311,15 +306,6 @@ function login() {
         .post("https://api-clone-picpay.herokuapp.com/login", {
           email: username.value,
           password: passwd.value,
-        }, {
-          headers: {
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-            'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, HEAD, OPTIONS',
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            "Authorization" : `Basic ${localStorage.getItem('token')}`
-          }
         })
         .then(function (r) {
           if (r.status == 200) {
