@@ -30,12 +30,10 @@ router.post("/", async function (req, res, next) {
       .json({ data: { mensagem: "Usuário e senha não conferem!" } });
   } else {
     return res.status(200).json({
-      token: generateToken(
-        JSON.stringify({
-          email: `${req.body.email}`,
-          admin: `${verify.admin}`,
-        })
-      ),
+      token: generateToken({
+        email: `${req.body.email}`,
+        admin: `${verify.admin}`,
+      }),
     });
   }
 });

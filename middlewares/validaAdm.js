@@ -10,7 +10,8 @@ module.exports = (req, res, next) => {
   jwt.verify(authHeader, configKey.key, (err, decoded) => {
     if (err) return res.status(401).send({ error: "Token inválido" });
     var decoded = jwt.decode(authHeader, { complete: true });
-    let admin = JSON.parse(decoded.payload.payload).admin;
+    console.log(decoded.payload.admin);
+    let admin = decoded.payload.admin;
     if (admin == "false")
       return res.status(403).send({ error: "Usuário não tem permissão!" });
 
