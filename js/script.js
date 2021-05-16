@@ -93,42 +93,62 @@ function upload() {
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
   var wrapper_upload = document.getElementById("wrapper_upload");
 
+  var dialog = document.getElementById("dialog_upload");
+  var mensagem = document.getElementById("mensagem_upload");
+  var btn_OK_upload = document.getElementById("btn_OK_upload");
+
   wrapper_index.className = "desaparecer";
   wrapper_login.className = "desaparecer";
   wrapper_busca.className = "desaparecer";
   wrapper_cadastro.className = "desaparecer";
   wrapper_upload.className = "wrapper";
   var button = document.getElementById("button_upload");
-
   var data = document.getElementById("input_data");
   var descricao = document.getElementById("input_descricao");
   var file = document.getElementById("button_escolher");
-
+  var flag = 0;
   const formData = new FormData();
 
-  button.addEventListener("click", function () {
+  button.onclick = function () {
     formData.append("file",file.files[0]);
     formData.append("data",data.value);
     formData.append("descricao",descricao.value);
+
     
-    if (data.value.length > 0 && descricao.value.length > 0) {
+    if (data.value.length > 0 && descricao.value.length > 0) { 
       axios
         .post(var_api + "upload",formData,{  headers: {
           "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
           }})
         .then(function (response) {
           if (response.status == 200) {
-            busca_api();
-            alert("Upload realizado com Sucesso!");
+            flag = 1;
+            mensagem.innerHTML = "Upload realizado com Sucesso!";
+            dialog.className = "dialog show";
           }
         })
         .catch(function (error) {
-          alert("Erro ao fazer upload!");
+          mensagem.innerHTML = "Erro ao fazer upload!";
+          dialog.className = "dialog show";
         });
     } else {
-      alert("Insira os dados!");
-    }
+      mensagem.innerHTML = "Insira os dados!";
+      dialog.className = "dialog show";
+    } 
 
+  }; 
+
+  btn_OK_upload.addEventListener("click", function () {
+    if(flag == 1){
+      wrapper_index.className = "desaparecer";
+      wrapper_login.className = "desaparecer";
+      wrapper_busca.className = "wrapper";
+      wrapper_cadastro.className = "desaparecer";
+      wrapper_upload.className = "desaparecer"
+    } else {
+      dialog.className = "dialog";
+    }
+    
   });
 
 }
@@ -155,34 +175,44 @@ function busca_api() {
   var search = document.getElementById("search");
   var button_upload = document.getElementById("btn_upload_page");
 
+  var dialog = document.getElementById("dialog_busca");
+  var mensagem = document.getElementById("mensagem_busca");
+  var btn_OK_busca = document.getElementById("btn_OK_busca");
+
+
   button.addEventListener("click", function () {
     console.log(search.value);
-    axios
-      .post(
-        var_api+"upload/data",{
-          data: search.value,
-        }
-      )
-      .then(function (res) {
-        if(res){
-        //  console.log(res);
-            msg.innerHTML =
-              "Data: " +
-              res.data.data +
-              "<br>" +
-              "Descrição: " +
-              res.data.descricao +
-              "<br>" + 
-              `<img src="${var_api}download/${res.data.image_name}" width=300 height=200>`
-
-          //  download()
+    if(search.value != ''){
+      axios
+        .post(
+          var_api+"upload/data",{
+            data: search.value,
           }
-        else{
-          msg.innerHTML =
-            "Não foram encontrados eventos correspondentes a data " +
-            search.value;
-        }
-      });
+        )
+        .then(function (res) {
+          if(res.data != null){
+          console.log(res);
+              msg.innerHTML =
+                "Data: " +
+                res.data.data +
+                "<br>" +
+                "Descrição: " +
+                res.data.descricao +
+                "<br>" + 
+                `<img src="${var_api}download/${res.data.image_name}" width=300 height=200>`
+
+            //  download()
+            }
+          else{
+            msg.innerHTML =
+              "Não foram encontrados eventos correspondentes a data " +
+              search.value;
+          }
+        });
+    } else {
+      mensagem.innerHTML = "Selecione uma data!";
+      dialog.className = "dialog show";
+    }
 
   });
 
@@ -202,13 +232,19 @@ function busca_api() {
         }
 
         else if(r.status == 403){
-          alert("Usuário Não é Admin");
+          mensagem.innerHTML = "Usuário não tem permissão!";
+          dialog.className = "dialog show";
         }
       })
       .catch(function (error) {
-        alert("Usuário Não é Admin");
+        mensagem.innerHTML = "Usuário não tem permissão!";
+        dialog.className = "dialog show";
       });
 
+  }); 
+
+  btn_OK_busca.addEventListener("click", function () {
+    dialog.className = "dialog";
   });
 }
 

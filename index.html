@@ -129,6 +129,10 @@
       <ul class="result_busca" id="result"></ul>
       <img class = "img_busca" id = "img_busca"/>
     </div>
+    <div class="dialog" id="dialog_busca">
+      <p id="mensagem_busca" class="mensagem"></p>
+      <input id="btn_OK_busca" type="submit" class="btn_OK" value="OK">
+    </div>
   </div>
 
     <!-- WRAPPER UPLOAD -->
@@ -147,6 +151,10 @@
             <button class="button_api" id="button_upload">Upload</button>    
           </li>
         </ul>
+      </div>
+      <div class="dialog" id="dialog_upload">
+        <p id="mensagem_upload" class="mensagem"></p>
+        <input id="btn_OK_upload" type="submit" class="btn_OK" value="OK">
       </div>
     </div>
 
@@ -201,8 +209,7 @@
   cadastrar();
   cadastro();
   upload();
-  logo();
-  
+  logo(); 
 </script>
 
 </html>
