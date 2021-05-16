@@ -57,25 +57,44 @@ function pesquisar() {
   var wrapper_busca = document.getElementById("wrapper_busca");
   var wrapper_cadastro = document.getElementById("wrapper_cadastro");
   var wrapper_upload = document.getElementById("wrapper_upload");
-  var token = localStorage.getItem("token");
   var dialog = document.getElementById("dialog_index");
   var mensagem = document.getElementById("mensagem_index");
   var btn_OK_index = document.getElementById("btn_OK_index");
   var btn_pesquisar = document.getElementById("btn_pesquisar");
 
   btn_pesquisar.addEventListener("click", function () {
-    console.log("clicou");
+    var token = localStorage.getItem("token");
     if (token == undefined) {
       mensagem.innerHTML =
         "Necessário estar logado para acessar pesquisa. Faça agora o login!";
       dialog.className = "dialog show";
     } else {
-      wrapper_index.className = "desaparecer";
-      wrapper_login.className = "desaparecer";
-      wrapper_busca.className = "wrapper";
-      wrapper_cadastro.className = "desaparecer";
-      wrapper_upload.className = "desaparecer";
+    axios
+      .get(var_api + "autenticacao", {
+          headers: {
+            "Authorization" : token
+          },
+      })
+      .then(function (r) {
+        if (r.status == 200) {
+          wrapper_index.className = "desaparecer";
+          wrapper_login.className = "desaparecer";
+          wrapper_busca.className = "wrapper";
+          wrapper_cadastro.className = "desaparecer";
+          wrapper_upload.className = "desaparecer";
+       }
+
+        else if(r.status == 401){
+          mensagem.innerHTML = "Token expirado! Realize o login novamente!";
+          dialog.className = "dialog show";
+        }
+      })
+      .catch(function (error) {
+        mensagem.innerHTML = "Token expirado! Realize o login novamente!";
+        dialog.className = "dialog show";
+      });
     }
+
   });
 
   btn_OK_index.addEventListener("click", function () {
