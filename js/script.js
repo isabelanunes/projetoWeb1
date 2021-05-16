@@ -1,6 +1,6 @@
 const heroku = "https://api-clone-picpay.herokuapp.com/";
 const local = "http://localhost:3000/";
-const var_api = local;
+const var_api = heroku;
 
 
 function logo() {
@@ -115,7 +115,7 @@ function upload() {
     formData.append("descricao",descricao.value);
 
     
-    if (data.value.length > 0 && descricao.value.length > 0) { 
+    if (data.value.length > 0 && descricao.value.length > 0 && file.files[0] != null) { 
       axios
         .post(var_api + "upload",formData,{  headers: {
           "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
@@ -135,7 +135,7 @@ function upload() {
       mensagem.innerHTML = "Insira os dados!";
       dialog.className = "dialog show";
     } 
-
+  
   }; 
 
   btn_OK_upload.addEventListener("click", function () {
