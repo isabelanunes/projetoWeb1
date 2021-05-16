@@ -165,16 +165,17 @@ function busca_api() {
       )
       .then(function (res) {
         if(res){
-          console.log(res);
+        //  console.log(res);
             msg.innerHTML =
-              "Date: " +
+              "Data: " +
               res.data.data +
               "<br>" +
-              "Description: " +
+              "Descrição: " +
               res.data.descricao +
-              "<br>"
+              "<br>" + 
+              `<img src="${var_api}download/${res.data.image_name}" width=300 height=200>`
 
-            download(res.data.image_name)
+          //  download()
           }
         else{
           msg.innerHTML =
