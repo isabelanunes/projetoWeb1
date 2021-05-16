@@ -99,51 +99,90 @@ function upload() {
   wrapper_cadastro.className = "desaparecer";
   wrapper_upload.className = "wrapper";
   var button = document.getElementById("button_upload");
+
+  var data = document.getElementById("input_data");
+  var descricao = document.getElementById("input_descricao");
+  var file = document.getElementById("button_escolher");
+
+  const formData = new FormData();
+
+  button.addEventListener("click", function () {
+    formData.append("file",file.files[0]);
+    formData.append("data",data.value);
+    formData.append("descricao",descricao.value);
+    
+    if (data.value.length > 0 && descricao.value.length > 0) {
+      axios
+        .post(var_api + "upload",formData,{  headers: {
+          "Content-Type": `multipart/form-data; boundary=${formData._boundary}`,
+          }})
+        .then(function (response) {
+          if (response.status == 200) {
+            busca_api();
+            alert("Upload realizado com Sucesso!");
+          }
+        })
+        .catch(function (error) {
+          alert("Erro ao fazer upload!");
+        });
+    } else {
+      alert("Insira os dados!");
+    }
+
+  });
+
 }
+
+function download(image){
+  console.log(image);
+  var img_busca = document.getElementById("img_busca");
+  axios
+      .get(var_api+"download/"+image)
+      .then(function (res) {
+        if(res){
+          console.log(res);
+          }
+        else{
+          console.log("Erro ao buscar a imagem!")
+        }
+      });
+}
+
 
 function busca_api() {
   var msg = document.getElementById("result");
   var button = document.getElementById("button_api");
   var search = document.getElementById("search");
-  var button_upload = document.getElementById("button_upload_page");
+  var button_upload = document.getElementById("btn_upload_page");
 
   button.addEventListener("click", function () {
+    console.log(search.value);
     axios
-      .get(
-        "https://calendarific.com/api/v2/holidays?&api_key=bb433f717e522421e7b553183371f2c27a83feae&country=BR&year=" +
-          search.value.substring(0, 4)
+      .post(
+        var_api+"upload/data",{
+          data: search.value,
+        }
       )
       .then(function (res) {
-        console.log(res.data.response.holidays);
-        let docs = res.data.response.holidays;
-        var i = 0;
-        var control = 0;
-        for (i; i < docs.length; i++) {
-          if (docs[i].date.iso == search.value) {
+        if(res){
+          console.log(res);
             msg.innerHTML =
               "Date: " +
-              docs[i].date.iso +
-              "<br>" +
-              "Name: " +
-              docs[i].name +
+              res.data.data +
               "<br>" +
               "Description: " +
-              docs[i].description +
-              "<br>" +
-              "Country: " +
-              docs[i].country.name +
-              "<br>";
-          } else {
-            control++;
-          }
-        }
+              res.data.descricao +
+              "<br>"
 
-        if (control == i) {
+            download(res.data.image_name)
+          }
+        else{
           msg.innerHTML =
-            "Não foram encontrados feriados correspondentes a data " +
+            "Não foram encontrados eventos correspondentes a data " +
             search.value;
         }
       });
+
   });
 
   button_upload.addEventListener("click", function () {

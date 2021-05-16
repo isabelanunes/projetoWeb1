@@ -122,11 +122,12 @@
         <li></li><input id="search" class="search" type="date" name="search"
           placeholder="Digite a data no formato YYYY-MM-DD "> </li>
         <li> <button class="button_api" id="button_api">Pesquisar</button>
-           <button class="button_api" id="button_upload_page">Upload</button>
+           <button class="button_api" id="btn_upload_page">Upload</button>
         </li>
       </ul>
       <a>Resultados da Busca:</a>
       <ul class="result_busca" id="result"></ul>
+      <img class = "img_busca" id = "img_busca"/>
     </div>
   </div>
 
@@ -135,13 +136,13 @@
     <div class="wrapper" id="wrapper_upload">
       <div class="busca">
         <ul class="pesquisa">
-          <li></li><input id="search" class="search" type="date" name="search"
+          <li></li><input id="input_data" class="search" type="date" name="search"
             placeholder="Digite a data no formato YYYY-MM-DD ">
-            <input id="search" class="search" type="text" name="search"
+            <input id="input_descricao" class="search" type="text" name="search"
             placeholder="Descrição">
           <li> 
             <form action="/" method="post" enctype="multipart/form-data">
-              <input type="file" name="filetoupload" class="button_escolher" id="button_escolher">
+              <input type="file" name="file" class="button_escolher" id="button_escolher">
             </form>
             <button class="button_api" id="button_upload">Upload</button>    
           </li>
