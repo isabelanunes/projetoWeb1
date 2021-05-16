@@ -15,7 +15,7 @@ var app = express();
 let cors = require("cors");
 const bodyParser = require("body-parser");
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*", methods: "GET,PUT,POST,DELETE" }));
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
