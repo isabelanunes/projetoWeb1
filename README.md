@@ -10,3 +10,17 @@ e CSS para construção de um layout de um website. </p>
 <h2> Considerações </h2>
 <p> Foi desenvolvido por Álvaro Pedroso Queiroz e Isabela Nunes Caetano. A reprodução do site escolhido foi o <a href="https://www.picpay.com/site">PicPay</a>.</p> 
 <p> O resultado final pode ser observado neste <a href="https://isabelanunes.github.io./">link</a>. </p>
+
+<h1> Projeto 3 - Programação para Web </h1> 
+<p> Continuidade a aplicação web desenvolvida no Projeto 2 - implementando as funcionalidades do lado servidor que foram utilizadas no Projeto 2, quais sejam: rotinas de consulta e login no lado servidor e subistituição das implementações das APIs abertas utilizadas. <p>
+<p> O servidor foi hospedado na plataforma Heroku. <p>
+<p> Foi utilizado o banco de dados MongoDB. </p>
+<p> Podem ser utilizados os seguintes usuários para teste: <br>
+  <ul>
+    <li> adm - email: admin@teste.com e senha 1234</li>
+    <li> user - email: user@teste.com e senha 1234</li>
+  </ul>
+</p>
+<p> Novo usuários, exceto administradores, podem ser inseridos normalmente. </p>
+
+
