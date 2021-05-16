@@ -1,8 +1,9 @@
 const MongoClient = require("mongodb").MongoClient;
 const path = require("path");
 
-const variaveis_ambiente = require("../config/bd.json");
-const url = variaveis_ambiente.heroku;
+//const variaveis_ambiente = require("../config/bd.json");
+//const url = variaveis_ambiente.heroku;
+const url = process.env.BD;
 
 module.exports = class Files {
   static async insertFile(req, res) {

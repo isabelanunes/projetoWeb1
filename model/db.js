@@ -1,7 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const variaveis_ambiente = require("../config/bd.json");
-const url = variaveis_ambiente.heroku;
+//const variaveis_ambiente = require("../config/bd.json");
+//const url = variaveis_ambiente.heroku;
+const url = process.env.BD;
 
 module.exports = class Users {
   static async insertUser(email, password, admin) {
